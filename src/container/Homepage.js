@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import ProjectService from "../services/ProjectService"
+import ProjectRow from "../components/ProjectRow"
+import ProjectCard from "../components/ProjectCard"
 
 export default class Homepage extends Component {
 
@@ -27,11 +29,23 @@ export default class Homepage extends Component {
         this.projectService
             .getDonorschooseProjects(this.state.searchQuery)
             .then((projects) => {
-                console.log(projects);
-                this.setState({projects: projects});
+                console.log(projects.proposals);
+                this.setState({projects: projects.proposals});
             });
     }
 
+
+    renderProjectRows() {
+        let projects = this.state.projects.map(
+            (project) => {
+                // return <ProjectRow project={project}
+                //                    key={project.id}/>
+                return <ProjectCard project={project}
+                                   key={project.id}/>
+            }
+        );
+        return(projects);
+    }
 
 
     render() {
@@ -55,8 +69,10 @@ export default class Homepage extends Component {
                         </thead>
 
                         <tbody>
+                            <div className="row">
 
-
+                                {this.renderProjectRows()}
+                            </div>
                         </tbody>
 
                     </table>
