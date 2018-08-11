@@ -1,50 +1,12 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import ProjectService from "../services/ProjectService"
-import ProjectRow from "../components/ProjectRow"
-import ProjectCard from "../components/ProjectCard"
+import ProjectsList from "./ProjectsList";
+import Register from "./Register";
 
 export default class Homepage extends Component {
 
     constructor() {
         super();
-        this.projectService = ProjectService.instance;
-        this.state = {
-            searchQuery: '',
-            projects: []
-        };
-
-        this.searchQueryChanged = this.searchQueryChanged.bind(this);
-        this.getDonorschooseProjects = this.getDonorschooseProjects.bind(this);
-    }
-
-    searchQueryChanged(event) {
-        // console.log(event.target.value);
-        this.setState({
-            searchQuery: event.target.value
-        })
-    }
-
-    getDonorschooseProjects() {
-        this.projectService
-            .getDonorschooseProjects(this.state.searchQuery)
-            .then((projects) => {
-                console.log(projects.proposals);
-                this.setState({projects: projects.proposals});
-            });
-    }
-
-
-    renderProjectRows() {
-        let projects = this.state.projects.map(
-            (project) => {
-                // return <ProjectRow project={project}
-                //                    key={project.id}/>
-                return <ProjectCard project={project}
-                                   key={project.id}/>
-            }
-        );
-        return(projects);
     }
 
 
@@ -52,33 +14,29 @@ export default class Homepage extends Component {
         return(
             <Router>
                 <div className="container-fluid">
-                    <h1>Search projects from DonorsChoose.org</h1>
+                    <h2>Homepage</h2>
 
-                    <table className="table">
-                        <thead>
-                            <tr><th>Search Projects By keywords:</th></tr>
-                            <tr>
-                                <th><input onChange={this.searchQueryChanged}
-                                           className="form-control"
-                                           id="searchFld"
-                                           placeholder="Description, synopsis, city, etc,"/></th>
 
-                                <th><button onClick={this.getDonorschooseProjects}
-                                            className="btn btn-primary">Search</button></th>
-                            </tr>
-                        </thead>
+                    <Route path="/search"
+                           component={ProjectsList}/>
 
-                        <tbody>
-                            <div className="row">
+                    <Route path="/register"
+                        component={Register}/>
 
-                                {this.renderProjectRows()}
-                            </div>
-                        </tbody>
 
-                    </table>
+                    {/*<Route path="/register"*/}
+                           {/*component={Register}/>*/}
+
+                    {/*<Route path="/search"*/}
+                           {/*component={ProjectsList}/>*/}
+
+
+
                 </div>
 
             </Router>
-        )
+
+
+        );
     }
 }
