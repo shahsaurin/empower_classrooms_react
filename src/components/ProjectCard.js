@@ -14,7 +14,7 @@ export default class ProjectCard extends React.Component {
 
 
                 <div className="col-4">
-                    <img className="card-img-top" src={this.props.project.imageURL} alt="Card image cap"/>
+                    <img className="card-img-top" src={this.props.project.imageURL}/>
                 </div>
                 <div className="col-8">
                     <div className="card-body">
@@ -26,7 +26,6 @@ export default class ProjectCard extends React.Component {
                     </div>
                 </div>
                 </div>
-
             </div>
         )
     }

@@ -5,11 +5,6 @@ import Register from "./Register";
 
 export default class Homepage extends Component {
 
-    constructor() {
-        super();
-    }
-
-
     render() {
         return(
             <Router>
