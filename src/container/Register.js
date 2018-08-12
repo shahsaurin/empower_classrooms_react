@@ -170,10 +170,8 @@ export default class Register extends Component {
                 </form>
 
                 <div className="form-group row">
-                    <div className="offset-sm-2 col-sm-10">
                         <button onClick={this.registerUser}
-                                className="btn btn-primary">Register</button>
-                    </div>
+                                className="btn btn-block btn-primary">Register</button>
                 </div>
             </div>
         );

@@ -22,7 +22,7 @@ export default class ProjectCard extends React.Component {
                         <p className="card-text">{this.props.project.shortDescription}</p>
                         <p className="card-text">Total Price: ${this.props.project.totalPrice}</p>
                         <p className="card-text">Cost to complete: ${this.props.project.costToComplete}</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
                     </div>
                 </div>
                 </div>

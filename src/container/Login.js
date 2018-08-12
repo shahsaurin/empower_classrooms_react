@@ -73,10 +73,8 @@ export default class Login extends Component {
                 </form>
 
                 <div className="form-group row">
-                    <div className="offset-sm-2 col-sm-10">
                         <button onClick={this.login}
-                                className="btn btn-success">Login</button>
-                    </div>
+                                className="btn btn-block btn-success">Login</button>
                 </div>
             </div>
         );

@@ -1,4 +1,8 @@
 import React, {Component} from 'react'
+
+
+
+
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ProjectService from "../services/ProjectService"
 import ProjectRow from "../components/ProjectRow"
@@ -50,7 +54,7 @@ export default class ProjectsList extends Component {
 
     render() {
         return(
-            <Router>
+
                 <div className="container-fluid">
 
                     <div className="row">
@@ -98,7 +102,7 @@ export default class ProjectsList extends Component {
                     </table>
                 </div>
 
-            </Router>
+
         )
     }
 }
