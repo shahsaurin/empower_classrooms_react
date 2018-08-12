@@ -36,6 +36,20 @@ class UserService {
         })
     }
 
+
+    login(userObj, userType) {
+        let loginUserUrl = BASE_URL + '/api/' + userType.toLowerCase() + '/login';
+        return fetch(loginUserUrl, {
+            body: JSON.stringify(userObj),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        }).then(function (response) {
+            return response.json();
+        })
+    }
+
 }
 
 export default UserService;

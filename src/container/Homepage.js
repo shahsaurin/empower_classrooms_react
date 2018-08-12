@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import ProjectsList from "./ProjectsList";
 import Register from "./Register";
+import Login from "./Login";
 
 export default class Homepage extends Component {
 
@@ -17,6 +18,9 @@ export default class Homepage extends Component {
 
                     <Route path="/register"
                         component={Register}/>
+
+                    <Route path="/login"
+                           component={Login}/>
 
 
                     {/*<Route path="/register"*/}

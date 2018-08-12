@@ -49,8 +49,8 @@ export default class Register extends Component {
             zip: this.state.zip,
             phone: this.state.phone
         };
-        console.log(user);
-        console.log(this.state.userType);
+        // console.log(user);
+        // console.log(this.state.userType);
         let schoolId = '';
 
         if(this.state.schoolName && this.state.userType.toLowerCase() === 'teacher') {
@@ -64,11 +64,17 @@ export default class Register extends Component {
                 .then((schoolId) => {
                     console.log('SchoolId in:' + schoolId);
                     this.userService
-                        .createUser(user, this.state.userType, schoolId);
+                        .createUser(user, this.state.userType, schoolId)
+                        .then((user) =>
+                            alert("Account created successfully!!")
+                        );
                 })
         } else {
             this.userService
-                .createUser(user, this.state.userType, null);
+                .createUser(user, this.state.userType, null)
+                .then((user) =>
+                    alert("Account created successfully!!")
+                );
         }
 
 
