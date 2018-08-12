@@ -59,11 +59,16 @@ export default class ProjectsList extends Component {
                             <h3>Search projects from DonorsChoose.org</h3>
                         </div>
                         <div className="col-4">
-                            <button className="btn btn-primary">Login</button>
+                            <Link to={`/login`}>
+                                <button className="btn btn-primary">Login</button>
+                            </Link>
 
                             <Link to={`/register`}>
-                                <button className="btn btn-warning">Sign Up</button>
-                                Register
+                                <button className="btn btn-warning">Register</button>
+                            </Link>
+
+                            <Link to={`/new-school`}>
+                                <button className="btn btn-danger">Add New School</button>
                             </Link>
 
                         </div>

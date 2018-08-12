@@ -1,6 +1,5 @@
 let _singleton = Symbol();
 
-// const DONORSCHOOSE_API_URL = 'http://localhost:8080/api/donorschoose/project';
 const BASE_URL = 'http://localhost:8080';
 
 class SchoolService {
@@ -20,6 +19,18 @@ class SchoolService {
         return fetch(BASE_URL + '/api/school?schoolName=' + schoolName)
         .then(function (response) {
            return response.json();
+        })
+    }
+
+    addNewSchool(school) {
+        return fetch(BASE_URL + '/api/school', {
+            body: JSON.stringify(school),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        }).then(function (response) {
+            return response.json();
         })
     }
 }
