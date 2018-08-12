@@ -1,19 +1,30 @@
 import React, {Component} from 'react'
-import SchoolService from "../services/SchoolService";
+import ProjectService from "../services/ProjectService";
 
 export default class NewProject extends Component {
 
     constructor(props) {
         super(props);
         // this.schoolService = SchoolService.instance;
+        this.projectService = ProjectService.instance;
 
         this.state = {
-            // Additional attributes:
-            zip: '',
-            phone: ''
+            teacherId: '',
+            title: '',
+            shortDescription: '',
+            totalPrice: ''
         };
 
         this.handleChanged = this.handleChanged.bind(this);
+        this.addNewProjectForSchool = this.addNewProjectForSchool.bind(this);
+    }
+
+    selectTeacher(teacherId) {
+        this.setState({teacherId: teacherId});
+    }
+
+    componentDidMount() {
+        this.selectTeacher(this.props.match.params.teacherId);
     }
 
     handleChanged(event) {
@@ -23,19 +34,21 @@ export default class NewProject extends Component {
     }
 
 
-    addNewSchool() {
+    addNewProjectForSchool() {
         let school = {
-            name: this.state.name,
-            city: this.state.city,
-            zip: this.state.zip
-        };
-        this.schoolService
-            .addNewSchool(school)
-            .then((school) => {
-                console.log(school);
-                alert('School Created successfully!');
-                let currentUrl = window.location.href;
-                window.location = currentUrl.replace('new-school', 'search');
+            title: this.state.title,
+            shortDescription: this.state.shortDescription,
+            totalPrice: this.state.totalPrice
+        },
+        teacherId = this.state.teacherId;
+
+        this.projectService
+            .addNewProjectForSchool(school, teacherId)
+            .then((project) => {
+                console.log(project);
+                alert('Project Created successfully!');
+                // let currentUrl = window.location.href;
+                // window.location = currentUrl.replace('new-school', 'search');
             });
     }
 
@@ -75,7 +88,7 @@ export default class NewProject extends Component {
 
                 <div className="form-group row">
                     <div className="offset-sm-2 col-sm-10">
-                        <button onClick={this.addNewSchool}
+                        <button onClick={this.addNewProjectForSchool}
                                 className="btn btn-block btn-primary">Add this project to our database!</button>
                     </div>
                 </div>

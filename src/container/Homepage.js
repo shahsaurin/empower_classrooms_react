@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import ProjectsList from "./ProjectsList";
+import ProjectsList_API from "./ProjectsList_API";
 import Register from "./Register";
 import Login from "./Login";
 import NewSchool from "../school/NewSchool";
@@ -16,7 +16,7 @@ export default class Homepage extends Component {
 
 
                     <Route path="/search"
-                           component={ProjectsList}/>
+                           component={ProjectsList_API}/>
 
                     <Route path="/register"
                         component={Register}/>
@@ -29,14 +29,6 @@ export default class Homepage extends Component {
 
                     <Route path="/teacher/:teacherId/dashboard"
                            component={TeacherDashboard}/>
-
-
-                    {/*<Route path="/register"*/}
-                           {/*component={Register}/>*/}
-
-                    {/*<Route path="/search"*/}
-                           {/*component={ProjectsList}/>*/}
-
 
 
                 </div>

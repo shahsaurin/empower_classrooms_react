@@ -1,6 +1,7 @@
 let _singleton = Symbol();
 
-const DONORSCHOOSE_API_URL = 'http://localhost:8080/api/donorschoose/project';
+const BASE_URL = 'http://localhost:8080';
+// const DONORSCHOOSE_API_URL = 'http://localhost:8080/api/donorschoose/project';
 
 class ProjectService {
 
@@ -16,11 +17,40 @@ class ProjectService {
     }
 
     getDonorschooseProjects(searchQuery) {
-        return fetch(DONORSCHOOSE_API_URL + "?searchQuery=" + searchQuery)
+        return fetch(BASE_URL + "/api/donorschoose/project?searchQuery=" + searchQuery)
         .then(function (response) {
             return response.json();
         })
     }
+
+    addNewProjectForSchool(project, teacherId) {
+        return fetch(BASE_URL + '/api/project?teacherId=' + teacherId, {
+            body: JSON.stringify(project),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        }).then(function (response) {
+            return response.json();
+        })
+    }
+
+    findAllProjectsForTeacher(teacherId) {
+        return fetch(BASE_URL + '/api/project?teacherId=' + teacherId)
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
+    deleteProject(projectId) {
+        return fetch(BASE_URL + '/api/project/' + projectId, {
+            method: 'delete'
+        }).then(function (response) {
+            return response;
+        })
+    }
+
+
 }
 
 export default ProjectService;

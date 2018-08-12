@@ -4,23 +4,23 @@ import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
 import ProjectList from "../project/ProjectList";
 
-export default class TeacherDashboard extends Component {
+export default class VolunteerDashboard extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            teacherId: ''
+            volunteerId: ''
         };
 
-        this.selectTeacher = this.selectTeacher.bind(this);
+        this.selectVolunteer = this.selectVolunteer.bind(this);
     }
 
-    selectTeacher(teacherId) {
-        this.setState({teacherId: teacherId});
+    selectVolunteer(volunteerId) {
+        this.setState({teacherId: volunteerId});
     }
 
     componentDidMount() {
-        this.selectTeacher(this.props.match.params.teacherId);
+        this.selectVolunteer(this.props.match.params.volunteerId);
     }
 
 
@@ -29,8 +29,7 @@ export default class TeacherDashboard extends Component {
         return (
             <Router>
                 <div className="container">
-                    <h2>Teacher Account Home - Id: {this.state.teacherId}</h2>
-                    {/*<h3>Total Projects initiated: {}*/}
+                    <h2>Volunteer Account Home - Id: {this.state.volunteerId}</h2>
 
                     <div className="row">
                         <div className="col-4">
@@ -41,11 +40,11 @@ export default class TeacherDashboard extends Component {
                                     </Link>
                                 </li>
 
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/project/new`}>
-                                        Start New Project
-                                    </Link>
-                                </li>
+                                {/*<li className="list-group-item">*/}
+                                    {/*<Link to={`/teacher/${this.state.teacherId}/project/new`}>*/}
+                                        {/*Start New Project*/}
+                                    {/*</Link>*/}
+                                {/*</li>*/}
                             </ul>
 
                         </div>
@@ -55,10 +54,8 @@ export default class TeacherDashboard extends Component {
                             <Route path="/teacher/:teacherId/projects"
                                    component={ProjectList}/>
 
-                            <Route path="/teacher/:teacherId/project/new"
-                                   component={NewProject}/>
-
-
+                            {/*<Route path="/teacher/:teacherId/project/new"*/}
+                                   {/*component={NewProject}/>*/}
                         </div>
 
                     </div>
