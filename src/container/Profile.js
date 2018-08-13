@@ -29,6 +29,7 @@ export default class Profile extends Component {
         // this.registerUser = this.registerUser.bind(this);
         this.findUserById = this.findUserById.bind(this);
         this.updateProfle = this.updateProfle.bind(this);
+        this.deleteAccount = this.deleteAccount.bind(this);
     }
 
     handleChanged(event) {
@@ -71,52 +72,6 @@ export default class Profile extends Component {
     }
 
 
-    registerUser() {
-        let user = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            username: this.state.username,
-            password: this.state.password,
-            email: this.state.email,
-            // dob: this.state.dob,
-            city: this.state.city,
-            state: this.state.state,
-            zip: this.state.zip,
-            phone: this.state.phone
-        };
-        // console.log(user);
-        // console.log(this.state.userType);
-        let schoolId = '';
-
-        if(this.state.schoolName && this.state.userType.toLowerCase() === 'teacher') {
-            this.schoolService
-                .findSchoolByName(this.state.schoolName)
-                .then((school) => {
-                    schoolId = school[0].id;
-                    // console.log(schoolId);
-                    return schoolId;
-                })
-                .then((schoolId) => {
-                    console.log('SchoolId in:' + schoolId);
-                    this.userService
-                        .createUser(user, this.state.userType, schoolId)
-                        .then((user) =>
-                            alert("Account created successfully!!")
-                        );
-                })
-        } else {
-            this.userService
-                .createUser(user, this.state.userType, null)
-                .then((user) =>
-                    alert("Account created successfully!!")
-                );
-        }
-
-
-        // .then(() => {})
-        //    SET STATE Id
-    }
-
     updateProfle() {
         let updatedUser = {
             firstName: this.state.firstName,
@@ -136,6 +91,17 @@ export default class Profile extends Component {
             .updateUser(this.state.userId, updatedUser);
     }
 
+
+    deleteAccount() {
+        this.userService
+            .deleteUser(this.state.userId)
+            .then((error) => {
+                if(!error) {
+                    alert('Account deleted');
+                    window.location = ''
+                }
+            });
+    }
 
     render() {
         return (
@@ -232,6 +198,10 @@ export default class Profile extends Component {
                 <div className="form-group row">
                     <button onClick={this.updateProfle}
                             className="btn btn-block btn-success">Update Profile</button>
+                </div>
+                <div className="form-group row">
+                    <button onClick={this.deleteAccount}
+                            className="btn btn-block btn-danger">Delete Account</button>
                 </div>
             </div>
         );

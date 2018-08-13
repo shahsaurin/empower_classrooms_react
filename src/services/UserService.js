@@ -68,6 +68,14 @@ class UserService {
         })
     }
 
+    deleteUser(userId) {
+        return fetch(BASE_URL + '/api/person/' + userId, {
+            method: 'DELETE'
+        }).then(function (response) {
+            return response;
+        })
+    }
+
 }
 
 export default UserService;
