@@ -2,7 +2,7 @@ let _singleton = Symbol();
 
 const BASE_URL = 'http://localhost:8080';
 
-class VolunteerService {
+class DonorService {
 
     constructor(singleToken) {
         if(_singleton !== singleToken)
@@ -11,18 +11,18 @@ class VolunteerService {
 
     static get instance() {
         if(!this[_singleton])
-            this[_singleton] = new VolunteerService(_singleton);
+            this[_singleton] = new DonorService(_singleton);
         return this[_singleton];
     }
 
-    approveProjectByVolunteer(volunteerId, projectId) {
-        return fetch(BASE_URL + '/api/volunteer/' + volunteerId + '/approveProject?projectId=' + projectId, {
-            method: 'put'
+
+    donateToProject(donorId, projectId, donationAmount) {
+        return fetch(BASE_URL + '/api/donor/' + donorId + '/project/' + projectId + '/donate?amount=' + donationAmount, {
+            method: 'POST'
         }).then(function (response) {
             return response;
         })
     }
-
 }
 
-export default VolunteerService;
+export default DonorService;
