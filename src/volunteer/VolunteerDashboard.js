@@ -6,6 +6,7 @@ import ProjectList_teacher from "../project/ProjectList_teacher";
 import ProjectList_volunteer from "../project/ProjectList_volunteer";
 import MessageList from "../message/MessageList";
 import MessageCreator from "../message/MessageCreator";
+import Profile from "../container/Profile";
 
 export default class VolunteerDashboard extends Component {
 
@@ -37,7 +38,12 @@ export default class VolunteerDashboard extends Component {
                     <div className="row">
                         <div className="col-4">
                             <ul>
-                                <h3> Projects </h3>
+                                <li className="list-group-item">
+                                    <Link to={`/volunteer/${this.state.volunteerId}/profile`}>
+                                        My Profile
+                                    </Link>
+                                </li>
+
                                 <li className="list-group-item">
                                     <Link to={`/volunteer/${this.state.volunteerId}/projects/pending`}>
                                         Pending Projects
@@ -79,6 +85,9 @@ export default class VolunteerDashboard extends Component {
                         </div>
 
                         <div className="col-8">
+
+                            <Route path="/volunteer/:volunteerId/profile"
+                                   component={Profile}/>
 
                             <Route path="/volunteer/:volunteerId/projects/approved"
                                    component={ProjectList_volunteer}/>

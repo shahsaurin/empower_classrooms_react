@@ -4,6 +4,7 @@ import ProjectList_volunteer from "../project/ProjectList_volunteer";
 import ProjectList_donor from "../project/ProjectList_donor";
 import MessageList from "../message/MessageList";
 import MessageCreator from "../message/MessageCreator";
+import Profile from "../container/Profile";
 
 export default class DonorDashboard extends Component {
 
@@ -36,6 +37,11 @@ export default class DonorDashboard extends Component {
                         <div className="col-4">
                             <ul>
                                 <li className="list-group-item">
+                                    <Link to={`/donor/${this.state.donorId}/profile`}>
+                                        My Profile
+                                    </Link>
+                                </li>
+                                <li className="list-group-item">
                                     <Link to={`/donor/${this.state.donorId}/projects`}>
                                         Available Projects
                                     </Link>
@@ -63,6 +69,9 @@ export default class DonorDashboard extends Component {
                         </div>
 
                         <div className="col-8">
+
+                            <Route path="/donor/:donorId/profile"
+                                   component={Profile}/>
 
                             <Route path="/donor/:donorId/projects"
                                    component={ProjectList_donor}/>
