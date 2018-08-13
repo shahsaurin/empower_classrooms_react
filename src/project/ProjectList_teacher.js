@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ProjectService from "../services/ProjectService";
 import ProjectListItem from "./ProjectListItem"
 
-export default class ProjectList extends Component {
+export default class ProjectList_teacher extends Component {
 
     constructor(props) {
         super(props);
@@ -62,7 +62,7 @@ export default class ProjectList extends Component {
                                  key={project.id}
                                  delete={this.deleteProject}/>
             )
-        })
+        });
         return projects;
     }
 

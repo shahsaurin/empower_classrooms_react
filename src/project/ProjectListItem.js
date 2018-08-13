@@ -21,22 +21,30 @@ export default class ProjectListItem extends Component {
     render() {
         return (
             <li className="list-group-item">
-                {/*<Link to={`/course/${this.props.courseId}/module/${this.props.module.id}`}>*/}
-                <ul>
-                    <li>Title: {this.props.project.title}</li>
-                    <li>Short Description: {this.props.project.shortDescription}</li>
-                    <li>Total Price: {this.props.project.totalPrice}</li>
-                    <li>Cost to Complete: {this.props.project.costToComplete}</li>
-                    <li>Approval Status: {this.state.approved}</li>
-                </ul>
+                <div>
+                    {/*<Link to={`/course/${this.props.courseId}/module/${this.props.module.id}`}>*/}
+                    <ul>
+                        <li>Title: {this.props.project.title}</li>
+                        <li>Short Description: {this.props.project.shortDescription}</li>
+                        <li>Total Price: {this.props.project.totalPrice}</li>
+                        <li>Cost to Complete: {this.props.project.costToComplete}</li>
+                        <li>Approval Status: {this.state.approved}</li>
+                    </ul>
 
-                {/*</Link>*/}
+                    {/*</Link>*/}
 
-                <span className="float-right">
-                    <i className="fa fa-trash" onClick={() =>
-                    {this.props.delete(this.props.project.id)}}></i>
-                    {/*<i className="fa fa-pencil"></i>*/}
-                </span>
+                    <span className="float-right">
+                        <i className="fa fa-trash" onClick={() => {this.props.delete(this.props.project.id)}}></i>
+                        {/*<i className="fa fa-pencil"></i>*/}
+                    </span>
+
+                </div>
+                <div className={this.props.displayApproveButton ? '' : 'hidden'}>
+                    <button className="btn btn-success"
+                            onClick={() => {this.props.approveProject(this.props.volunteerId,this.props.project.id)}}>
+                        Approve
+                    </button>
+                </div>
             </li>
         );
     }

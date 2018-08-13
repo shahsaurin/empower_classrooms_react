@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
-import ProjectList from "../project/ProjectList";
+import ProjectList_teacher from "../project/ProjectList_teacher";
+import ProjectList_volunteer from "../project/ProjectList_volunteer";
 
 export default class VolunteerDashboard extends Component {
 
@@ -16,7 +17,7 @@ export default class VolunteerDashboard extends Component {
     }
 
     selectVolunteer(volunteerId) {
-        this.setState({teacherId: volunteerId});
+        this.setState({volunteerId: volunteerId});
     }
 
     componentDidMount() {
@@ -34,28 +35,29 @@ export default class VolunteerDashboard extends Component {
                     <div className="row">
                         <div className="col-4">
                             <ul>
+                                <h3> Projects </h3>
                                 <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/projects`}>
-                                        View created projects
+                                    <Link to={`/volunteer/${this.state.volunteerId}/projects/pending`}>
+                                        Pending approval
                                     </Link>
                                 </li>
 
-                                {/*<li className="list-group-item">*/}
-                                    {/*<Link to={`/teacher/${this.state.teacherId}/project/new`}>*/}
-                                        {/*Start New Project*/}
-                                    {/*</Link>*/}
-                                {/*</li>*/}
+                                <li className="list-group-item">
+                                    <Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>
+                                        Approved
+                                    </Link>
+                                </li>
                             </ul>
 
                         </div>
 
                         <div className="col-8">
 
-                            <Route path="/teacher/:teacherId/projects"
-                                   component={ProjectList}/>
+                            <Route path="/volunteer/:volunteerId/projects/approved"
+                                   component={ProjectList_volunteer}/>
 
-                            {/*<Route path="/teacher/:teacherId/project/new"*/}
-                                   {/*component={NewProject}/>*/}
+                            <Route path="/volunteer/:volunteerId/projects/pending"
+                                   component={ProjectList_volunteer}/>
                         </div>
 
                     </div>

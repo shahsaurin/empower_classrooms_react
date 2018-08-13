@@ -5,6 +5,7 @@ import Register from "./Register";
 import Login from "./Login";
 import NewSchool from "../school/NewSchool";
 import TeacherDashboard from "../teacher/TeacherDashboard";
+import VolunteerDashboard from "../volunteer/VolunteerDashboard";
 
 export default class Homepage extends Component {
 
@@ -29,6 +30,9 @@ export default class Homepage extends Component {
 
                     <Route path="/teacher/:teacherId/dashboard"
                            component={TeacherDashboard}/>
+
+                    <Route path="/volunteer/:volunteerId/dashboard"
+                           component={VolunteerDashboard}/>
 
 
                 </div>

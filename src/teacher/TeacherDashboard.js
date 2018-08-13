@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
-import ProjectList from "../project/ProjectList";
+import ProjectList_teacher from "../project/ProjectList_teacher";
 
 export default class TeacherDashboard extends Component {
 
@@ -53,7 +53,7 @@ export default class TeacherDashboard extends Component {
                         <div className="col-8">
 
                             <Route path="/teacher/:teacherId/projects"
-                                   component={ProjectList}/>
+                                   component={ProjectList_teacher}/>
 
                             <Route path="/teacher/:teacherId/project/new"
                                    component={NewProject}/>

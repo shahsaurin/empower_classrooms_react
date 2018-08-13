@@ -42,6 +42,14 @@ class ProjectService {
             })
     }
 
+    findAllProjectsByApproval(isApproved) {
+        return fetch(BASE_URL + '/api/project?isApproved=' + isApproved)
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
+
     deleteProject(projectId) {
         return fetch(BASE_URL + '/api/project/' + projectId, {
             method: 'delete'
