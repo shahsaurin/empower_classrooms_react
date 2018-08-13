@@ -60,7 +60,8 @@ export default class ProjectList_teacher extends Component {
             return (
                 <ProjectListItem project={project}
                                  key={project.id}
-                                 delete={this.deleteProject}/>
+                                 delete={this.deleteProject}
+                                 deleteButton={true}/>
             )
         });
         return projects;

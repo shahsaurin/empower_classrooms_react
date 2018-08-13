@@ -33,10 +33,12 @@ export default class ProjectListItem extends Component {
 
                     {/*</Link>*/}
 
-                    <span className="float-right">
-                        <i className="fa fa-trash" onClick={() => {this.props.delete(this.props.project.id)}}></i>
-                        {/*<i className="fa fa-pencil"></i>*/}
-                    </span>
+                    <div className={this.props.deleteButton ? '' : 'hidden'}>
+                        <span className="float-right">
+                            <i className="fa fa-trash" onClick={() => {this.props.delete(this.props.project.id)}}></i>
+                            {/*<i className="fa fa-pencil"></i>*/}
+                        </span>
+                    </div>
 
                 </div>
                 <div className={this.props.displayApproveButton ? '' : 'hidden'}>

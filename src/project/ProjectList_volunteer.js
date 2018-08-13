@@ -81,7 +81,8 @@ export default class ProjectList_volunteer extends Component {
                                  project={project}
                                  key={project.id}
                                  approveProject={this.approveProjectByVolunteer}
-                                 displayApproveButton={displayApproveButton}/>
+                                 displayApproveButton={displayApproveButton}
+                                 deleteButton={false}/>
             )
         });
         return projectsDom;
