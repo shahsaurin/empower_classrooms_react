@@ -5,6 +5,7 @@ import NewProject from "../project/NewProject";
 import ProjectList_teacher from "../project/ProjectList_teacher";
 import MessageList from "../message/MessageList";
 import MessageCreator from "../message/MessageCreator";
+import Profile from "../container/Profile";
 
 export default class TeacherDashboard extends Component {
 
@@ -37,6 +38,12 @@ export default class TeacherDashboard extends Component {
                     <div className="row">
                         <div className="col-4">
                             <ul>
+                                <li className="list-group-item">
+                                    <Link to={`/teacher/${this.state.teacherId}/profile`}>
+                                        My Profile
+                                    </Link>
+                                </li>
+
                                 <li className="list-group-item">
                                     <Link to={`/teacher/${this.state.teacherId}/projects`}>
                                         View created projects
@@ -71,6 +78,9 @@ export default class TeacherDashboard extends Component {
                         </div>
 
                         <div className="col-8">
+
+                            <Route path="/teacher/:teacherId/profile"
+                                   component={Profile}/>
 
                             <Route path="/teacher/:teacherId/projects"
                                    component={ProjectList_teacher}/>

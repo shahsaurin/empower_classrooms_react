@@ -50,6 +50,24 @@ class UserService {
         })
     }
 
+
+    findUserById(userId) {
+        return fetch(BASE_URL + '/api/person/' + userId)
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
+    updateUser(userId, updatedUser) {
+        return fetch(BASE_URL + '/api/person/' + userId, {
+            body: JSON.stringify(updatedUser),
+            headers: {'Content-type': 'application/json'},
+            method: 'PUT'
+        }).then(function (response) {
+            return response.json();
+        })
+    }
+
 }
 
 export default UserService;

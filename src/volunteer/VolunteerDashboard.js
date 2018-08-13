@@ -40,13 +40,13 @@ export default class VolunteerDashboard extends Component {
                                 <h3> Projects </h3>
                                 <li className="list-group-item">
                                     <Link to={`/volunteer/${this.state.volunteerId}/projects/pending`}>
-                                        Projects Pending
+                                        Pending Projects
                                     </Link>
                                 </li>
 
                                 <li className="list-group-item">
                                     <Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>
-                                        Approved Project
+                                        Approved Projects
                                     </Link>
                                 </li>
 
