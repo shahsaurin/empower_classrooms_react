@@ -4,6 +4,7 @@ import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
 import ProjectList_teacher from "../project/ProjectList_teacher";
 import MessageList from "../message/MessageList";
+import MessageCreator from "../message/MessageCreator";
 
 export default class TeacherDashboard extends Component {
 
@@ -59,6 +60,12 @@ export default class TeacherDashboard extends Component {
                                         Sent Messages
                                     </Link>
                                 </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/teacher/${this.state.teacherId}/messageVolunteer`}>
+                                        Contact a Volunteer
+                                    </Link>
+                                </li>
                             </ul>
 
                         </div>
@@ -76,6 +83,9 @@ export default class TeacherDashboard extends Component {
 
                             <Route path="/teacher/:teacherId/sentbox"
                                    component={MessageList}/>
+
+                            <Route path="/teacher/:teacherId/messageVolunteer"
+                                   component={MessageCreator}/>
 
                         </div>
 

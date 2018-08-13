@@ -5,6 +5,7 @@ import NewProject from "../project/NewProject";
 import ProjectList_teacher from "../project/ProjectList_teacher";
 import ProjectList_volunteer from "../project/ProjectList_volunteer";
 import MessageList from "../message/MessageList";
+import MessageCreator from "../message/MessageCreator";
 
 export default class VolunteerDashboard extends Component {
 
@@ -60,6 +61,19 @@ export default class VolunteerDashboard extends Component {
                                         Sent Messages
                                     </Link>
                                 </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/volunteer/${this.state.volunteerId}/messageTeacher`}>
+                                        Contact a Teacher
+                                    </Link>
+                                </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/volunteer/${this.state.volunteerId}/messageDonor`}>
+                                        Contact a Donor
+                                    </Link>
+                                </li>
+
                             </ul>
 
                         </div>
@@ -77,6 +91,12 @@ export default class VolunteerDashboard extends Component {
 
                             <Route path="/volunteer/:volunteerId/sentbox"
                                    component={MessageList}/>
+
+                            <Route path="/volunteer/:volunteerId/messageTeacher"
+                                   component={MessageCreator}/>
+
+                            <Route path="/volunteer/:volunteerId/messageDonor"
+                                   component={MessageCreator}/>
 
                         </div>
 
