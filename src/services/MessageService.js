@@ -29,6 +29,21 @@ class MessageService {
                 return response.json();
             })
     }
+
+    sendMessage(senderId, recipientId, messageText) {
+        let messageObj = {
+            description: messageText
+        };
+        return fetch(BASE_URL + '/api/sender/' + senderId + '/recipient/' + recipientId + '/message', {
+            body: JSON.stringify(messageObj),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        }).then(function (response) {
+            return response;
+        })
+    }
 }
 
 export default MessageService;

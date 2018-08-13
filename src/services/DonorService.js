@@ -23,6 +23,14 @@ class DonorService {
             return response;
         })
     }
+
+    findAllDonors() {
+        return fetch(BASE_URL + '/api/donor')
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
 }
 
 export default DonorService;

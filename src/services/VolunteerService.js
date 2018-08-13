@@ -23,6 +23,12 @@ class VolunteerService {
         })
     }
 
+    findAllVolunteers() {
+        return fetch(BASE_URL + '/api/volunteer')
+            .then(function (response) {
+                return response.json();
+            })
+    }
 }
 
 export default VolunteerService;

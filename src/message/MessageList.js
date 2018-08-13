@@ -11,6 +11,8 @@ export default class MessageList extends Component {
         // this.donorService = DonorService.instance;
         this.messageService = MessageService.instance;
 
+        // As a Teacher/Volunteer/Donor is a 'User', we use 'userId' instead of user-type specific id's
+        // to make the component generic and useful across all types of users (teachers, volunteers, donors)
         this.state = {
             currentUserId: '',
             inbox: [],

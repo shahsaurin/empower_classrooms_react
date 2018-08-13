@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ProjectList_volunteer from "../project/ProjectList_volunteer";
 import ProjectList_donor from "../project/ProjectList_donor";
 import MessageList from "../message/MessageList";
+import MessageCreator from "../message/MessageCreator";
 
 export default class DonorDashboard extends Component {
 
@@ -53,7 +54,7 @@ export default class DonorDashboard extends Component {
                                 </li>
 
                                 <li className="list-group-item">
-                                    <Link to={`/donor/${this.state.donorId}/sendMessage`}>
+                                    <Link to={`/donor/${this.state.donorId}/messageVolunteer`}>
                                         Contact a Volunteer
                                     </Link>
                                 </li>
@@ -71,6 +72,9 @@ export default class DonorDashboard extends Component {
 
                             <Route path="/donor/:donorId/sentbox"
                                    component={MessageList}/>
+
+                            <Route path="/donor/:donorId/messageVolunteer"
+                                   component={MessageCreator}/>
                         </div>
 
                     </div>
