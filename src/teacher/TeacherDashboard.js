@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
 import ProjectList_teacher from "../project/ProjectList_teacher";
+import MessageList from "../message/MessageList";
 
 export default class TeacherDashboard extends Component {
 
@@ -46,6 +47,18 @@ export default class TeacherDashboard extends Component {
                                         Start New Project
                                     </Link>
                                 </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/teacher/${this.state.teacherId}/inbox`}>
+                                        Received Messages
+                                    </Link>
+                                </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/teacher/${this.state.teacherId}/sentbox`}>
+                                        Sent Messages
+                                    </Link>
+                                </li>
                             </ul>
 
                         </div>
@@ -58,6 +71,11 @@ export default class TeacherDashboard extends Component {
                             <Route path="/teacher/:teacherId/project/new"
                                    component={NewProject}/>
 
+                            <Route path="/teacher/:teacherId/inbox"
+                                   component={MessageList}/>
+
+                            <Route path="/teacher/:teacherId/sentbox"
+                                   component={MessageList}/>
 
                         </div>
 

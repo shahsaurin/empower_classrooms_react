@@ -4,6 +4,7 @@ import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
 import ProjectList_teacher from "../project/ProjectList_teacher";
 import ProjectList_volunteer from "../project/ProjectList_volunteer";
+import MessageList from "../message/MessageList";
 
 export default class VolunteerDashboard extends Component {
 
@@ -38,13 +39,25 @@ export default class VolunteerDashboard extends Component {
                                 <h3> Projects </h3>
                                 <li className="list-group-item">
                                     <Link to={`/volunteer/${this.state.volunteerId}/projects/pending`}>
-                                        Pending approval
+                                        Projects Pending
                                     </Link>
                                 </li>
 
                                 <li className="list-group-item">
                                     <Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>
-                                        Approved
+                                        Approved Project
+                                    </Link>
+                                </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/volunteer/${this.state.volunteerId}/inbox`}>
+                                        Received Messages
+                                    </Link>
+                                </li>
+
+                                <li className="list-group-item">
+                                    <Link to={`/volunteer/${this.state.volunteerId}/sentbox`}>
+                                        Sent Messages
                                     </Link>
                                 </li>
                             </ul>
@@ -58,6 +71,13 @@ export default class VolunteerDashboard extends Component {
 
                             <Route path="/volunteer/:volunteerId/projects/pending"
                                    component={ProjectList_volunteer}/>
+
+                            <Route path="/volunteer/:volunteerId/inbox"
+                                   component={MessageList}/>
+
+                            <Route path="/volunteer/:volunteerId/sentbox"
+                                   component={MessageList}/>
+
                         </div>
 
                     </div>

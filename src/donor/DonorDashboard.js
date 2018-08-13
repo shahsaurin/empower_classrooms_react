@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ProjectList_volunteer from "../project/ProjectList_volunteer";
 import ProjectList_donor from "../project/ProjectList_donor";
+import MessageList from "../message/MessageList";
 
 export default class DonorDashboard extends Component {
 
@@ -39,23 +40,23 @@ export default class DonorDashboard extends Component {
                                     </Link>
                                 </li>
 
-                                {/*<li className="list-group-item">*/}
-                                    {/*<Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>*/}
-                                        {/*Received Messages*/}
-                                    {/*</Link>*/}
-                                {/*</li>*/}
+                                <li className="list-group-item">
+                                    <Link to={`/donor/${this.state.donorId}/inbox`}>
+                                        Received Messages
+                                    </Link>
+                                </li>
 
-                                {/*<li className="list-group-item">*/}
-                                    {/*<Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>*/}
-                                        {/*Sent Messages*/}
-                                    {/*</Link>*/}
-                                {/*</li>*/}
+                                <li className="list-group-item">
+                                    <Link to={`/donor/${this.state.donorId}/sentbox`}>
+                                        Sent Messages
+                                    </Link>
+                                </li>
 
-                                {/*<li className="list-group-item">*/}
-                                    {/*<Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>*/}
-                                        {/*Contact a Volunteer*/}
-                                    {/*</Link>*/}
-                                {/*</li>*/}
+                                <li className="list-group-item">
+                                    <Link to={`/donor/${this.state.donorId}/sendMessage`}>
+                                        Contact a Volunteer
+                                    </Link>
+                                </li>
                             </ul>
 
                         </div>
@@ -65,8 +66,11 @@ export default class DonorDashboard extends Component {
                             <Route path="/donor/:donorId/projects"
                                    component={ProjectList_donor}/>
 
-                            {/*<Route path="/volunteer/:volunteerId/projects/pending"*/}
-                                   {/*component={ProjectList_volunteer}/>*/}
+                            <Route path="/donor/:donorId/inbox"
+                                   component={MessageList}/>
+
+                            <Route path="/donor/:donorId/sentbox"
+                                   component={MessageList}/>
                         </div>
 
                     </div>
