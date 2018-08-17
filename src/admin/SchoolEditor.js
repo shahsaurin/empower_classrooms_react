@@ -49,6 +49,8 @@ export default class SchoolEditor extends Component {
     componentDidUpdate(prevProps) {
         // Typical usage (don't forget to compare props):
         if (this.props.match.params.schoolId !== prevProps.match.params.schoolId) {
+            let schoolId = this.props.match.params.schoolId;
+            this.selectSchool(schoolId);
             this.findSchoolById(this.props.match.params.schoolId);
         }
     }
