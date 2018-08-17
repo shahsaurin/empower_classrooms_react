@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SchoolService from "../services/SchoolService";
+import {mySessionStorage} from "../storage/storage";
 
 export default class NewSchool extends Component {
 
@@ -9,12 +10,22 @@ export default class NewSchool extends Component {
 
         this.state = {
             // Additional attributes:
-            zip: '',
-            phone: ''
+            adminId: '',
+            name: '',
+            city: '',
+            zip: ''
         };
 
         this.handleChanged = this.handleChanged.bind(this);
         this.addNewSchool = this.addNewSchool.bind(this);
+    }
+
+    selectAdmin(adminId) {
+        this.setState({adminId: adminId});
+    }
+
+    componentDidMount() {
+        this.selectAdmin(this.props.match.params.adminId);
     }
 
     handleChanged(event) {
@@ -36,7 +47,14 @@ export default class NewSchool extends Component {
                 console.log(school);
                 alert('School Created successfully!');
                 let currentUrl = window.location.href;
-                window.location = currentUrl.replace('new-school', 'search');
+                // if(currentUrl.includes('admin')) {
+                //     window.location = currentUrl.replace('new-school', 'school');
+                // } else {
+                //     window.location = currentUrl.replace('new-school', 'search');
+                // }
+                if(!currentUrl.includes('admin')) {
+                    window.location = currentUrl.replace('new-school', 'search');
+                }
             });
     }
 
@@ -44,7 +62,7 @@ export default class NewSchool extends Component {
     render() {
         return (
             <div className="container">
-                <div>
+                <div className="m-2">
                     <h2>Add New School</h2>
                 </div>
                 <form>

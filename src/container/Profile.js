@@ -8,7 +8,6 @@ export default class Profile extends Component {
         super(props);
         this.userService = UserService.instance;
         this.schoolService = SchoolService.instance;
-        this.userService = UserService.instance;
 
         this.state = {
             userId: '',
@@ -158,7 +157,7 @@ export default class Profile extends Component {
                     {/*</div>*/}
                     {/*</div>*/}
                     <div className="row">
-                        <div className="form-group row col-6">
+                        <div className="form-group row col-md-6">
                             <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
                             <div className="col-sm-10">
                                 <input onChange={this.handleChanged} value={this.state.city}
@@ -166,7 +165,7 @@ export default class Profile extends Component {
                                        placeholder="City"/>
                             </div>
                         </div>
-                        <div className="form-group row col-6">
+                        <div className="form-group row col-md-6">
                             <label htmlFor="state" className="col-sm-2 col-form-label">State</label>
                             <div className="col-sm-10">
                                 <input onChange={this.handleChanged} value={this.state.state}
