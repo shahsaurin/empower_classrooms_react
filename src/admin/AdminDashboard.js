@@ -7,6 +7,7 @@ import MessageCreator from "../message/MessageCreator";
 import Profile from "../container/Profile";
 import SchoolManager from "./SchoolManager";
 import {mySessionStorage} from "../storage/storage";
+import ProjectManager from "./ProjectManager";
 
 export default class AdminDashboard extends Component {
 
@@ -39,8 +40,16 @@ export default class AdminDashboard extends Component {
                         <div className="col-4">
                             <ul>
                                 <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/school-control`}>
+                                    <Link to={`/admin/${this.state.adminId}/school-manager`}>
                                         School
+                                    </Link>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li className="list-group-item">
+                                    <Link to={`/admin/${this.state.adminId}/project-manager`}>
+                                        Project
                                     </Link>
                                 </li>
                             </ul>
@@ -49,8 +58,11 @@ export default class AdminDashboard extends Component {
 
                         <div className="col-8">
 
-                            <Route path="/admin/:adminId/school-control"
+                            <Route path="/admin/:adminId/school-manager"
                                    component={SchoolManager}/>
+
+                            <Route path="/admin/:adminId/project-manager"
+                                   component={ProjectManager}/>
                         </div>
 
                     </div>

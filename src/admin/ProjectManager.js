@@ -9,8 +9,9 @@ import SchoolList from "../school/SchoolList";
 import NewSchool from "../school/NewSchool";
 import {mySessionStorage} from "../storage/storage";
 import SchoolEditor from "./SchoolEditor";
+import NewProject from "../project/NewProject";
 
-export default class SchoolManager extends Component {
+export default class ProjectManager extends Component {
 
     constructor(props) {
         super(props);
@@ -35,28 +36,28 @@ export default class SchoolManager extends Component {
                 <div className="container">
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/school-manager/new-school`}>
+                            <Link to={`/admin/${this.state.adminId}/project-manager/new-project`}>
                                 <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">New School</a>
+                                   aria-controls="home" aria-selected="true">New Project</a>
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/school-manager/school`}>
+                            <Link to={`/admin/${this.state.adminId}/project-manager/project`}>
                                 <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">Schools</a>
+                                   aria-controls="home" aria-selected="true">Projects</a>
                             </Link>
                         </li>
                     </ul>
                     <div className="tab-content" id="myTabContent">
 
-                        <Route path="/admin/:adminId/school-manager/new-school"
-                               component={NewSchool}/>
+                        <Route path="/admin/:adminId/project-manager/new-project"
+                               component={NewProject}/>
 
-                        <Route path="/admin/:adminId/school-manager/school/:schoolId/edit"
-                               component={SchoolEditor}/>
+                        {/*<Route path="/admin/:adminId/project-manager/project/:projectId/edit"*/}
+                               {/*component={ProjectEditor}/>*/}
 
-                        <Route path="/admin/:adminId/school-manager/school"
-                               component={SchoolList}/>
+                        {/*<Route path="/admin/:adminId/project-manager/project"*/}
+                               {/*component={ProjectList}/>*/}
 
                     </div>
                 </div>

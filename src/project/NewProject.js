@@ -10,6 +10,8 @@ export default class NewProject extends Component {
 
         this.state = {
             teacherId: '',
+            showTeacherIdField: '',
+
             title: '',
             shortDescription: '',
             totalPrice: ''
@@ -24,7 +26,27 @@ export default class NewProject extends Component {
     }
 
     componentDidMount() {
-        this.selectTeacher(this.props.match.params.teacherId);
+        let teacherId = this.props.match.params.teacherId;
+        if(teacherId) {
+            console.log('In didMount if: ' + teacherId);
+            this.selectTeacher(teacherId);
+            this.setState({showTeacherIdField: false});
+        } else {
+            this.setState({showTeacherIdField: true});
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        // Typical usage (don't forget to compare props):
+        if (this.props.match.params.teacherId !== prevProps.match.params.teacherId) {
+            let teacherId = this.props.match.params.teacherId;
+            if(teacherId) {
+                this.selectTeacher(teacherId);
+                this.setState({showTeacherIdField: false});
+            } else {
+                this.setState({showTeacherIdField: true});
+            }
+        }
     }
 
     handleChanged(event) {
@@ -54,6 +76,11 @@ export default class NewProject extends Component {
 
 
     render() {
+        let teacherIdFieldclassName = 'form-group row';
+        if (!this.state.showTeacherIdField) {
+            teacherIdFieldclassName += ' hidden';
+        }
+
         return (
             <div className="container">
                 <div>
@@ -82,6 +109,14 @@ export default class NewProject extends Component {
                             <input onChange={this.handleChanged}
                                    type="text" name="totalPrice" className="form-control" id="totalPrice"
                                    placeholder="Total Price"/>
+                        </div>
+                    </div>
+                    <div className={teacherIdFieldclassName}>
+                        <label htmlFor="teacherId" className="col-sm-2 col-form-label">Teacher ID</label>
+                        <div className="col-sm-10">
+                            <input onChange={this.handleChanged}
+                                   type="text" name="teacherId" className="form-control" id="teacherId"
+                                   placeholder="Teacher ID"/>
                         </div>
                     </div>
                 </form>
