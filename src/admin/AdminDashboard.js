@@ -5,7 +5,7 @@ import ProjectList_donor from "../project/ProjectList_donor";
 import MessageList from "../message/MessageList";
 import MessageCreator from "../message/MessageCreator";
 import Profile from "../container/Profile";
-import SchoolControl from "./SchoolControl";
+import SchoolManager from "./SchoolManager";
 import {mySessionStorage} from "../storage/storage";
 
 export default class AdminDashboard extends Component {
@@ -50,7 +50,7 @@ export default class AdminDashboard extends Component {
                         <div className="col-8">
 
                             <Route path="/admin/:adminId/school-control"
-                                   component={SchoolControl}/>
+                                   component={SchoolManager}/>
                         </div>
 
                     </div>

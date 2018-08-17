@@ -10,7 +10,7 @@ import NewSchool from "../school/NewSchool";
 import {mySessionStorage} from "../storage/storage";
 import SchoolEditor from "./SchoolEditor";
 
-export default class SchoolControl extends Component {
+export default class SchoolManager extends Component {
 
     constructor(props) {
         super(props);
