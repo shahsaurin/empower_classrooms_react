@@ -139,7 +139,7 @@ export default class UserEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="firstName" className="col-sm-2 col-form-label">First Name</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.firstName}
+                            <input onChange={this.handleChanged} value={this.state.firstName || ''}
                                    type="text" name="firstName" className="form-control" id="firstName"
                                    placeholder="First Name"/>
                         </div>
@@ -147,7 +147,7 @@ export default class UserEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="lastName" className="col-sm-2 col-form-label">Last Name</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.lastName}
+                            <input onChange={this.handleChanged} value={this.state.lastName || ''}
                                    type="text" name="lastName" className="form-control" id="lastName"
                                    placeholder="last Name"/>
                         </div>
@@ -155,7 +155,7 @@ export default class UserEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.username}
+                            <input onChange={this.handleChanged} value={this.state.username || ''}
                                    type="text" name="username" className="form-control" id="username"
                                    placeholder="Username"/>
                         </div>
@@ -163,7 +163,7 @@ export default class UserEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.password}
+                            <input onChange={this.handleChanged} value={this.state.password || ''}
                                    type="password" name="password" className="form-control" id="password"
                                    placeholder="Password"/>
                         </div>
@@ -171,7 +171,7 @@ export default class UserEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.email}
+                            <input onChange={this.handleChanged} value={this.state.email || ''}
                                    type="email" name="email" className="form-control" id="email"
                                    placeholder="Email"/>
                         </div>
@@ -180,7 +180,7 @@ export default class UserEditor extends Component {
                     {/*<div className="form-group row">*/}
                     {/*<label htmlFor="dob" className="col-sm-2 col-form-label">Date of Birth</label>*/}
                     {/*<div className="col-sm-10">*/}
-                    {/*<input onChange={this.handleChanged} value={this.state.dob}
+                    {/*<input onChange={this.handleChanged} value={this.state.dob || ''}
                     type="date" name="dob" className="form-control" id="dob"
                     placeholder="Date of Birth"/>*/}
                     {/*</div>*/}
@@ -189,7 +189,7 @@ export default class UserEditor extends Component {
                         <div className="form-group row col-md-6">
                             <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
                             <div className="col-sm-10">
-                                <input onChange={this.handleChanged} value={this.state.city}
+                                <input onChange={this.handleChanged} value={this.state.city || ''}
                                        type="text" name="city" className="form-control" id="city"
                                        placeholder="City"/>
                             </div>
@@ -197,7 +197,7 @@ export default class UserEditor extends Component {
                         <div className="form-group row col-md-6">
                             <label htmlFor="state" className="col-sm-2 col-form-label">State</label>
                             <div className="col-sm-10">
-                                <input onChange={this.handleChanged} value={this.state.state}
+                                <input onChange={this.handleChanged} value={this.state.state || ''}
                                        type="text" name="state" className="form-control" id="state"
                                        placeholder="State"/>
                             </div>
@@ -207,7 +207,7 @@ export default class UserEditor extends Component {
                         <div className="form-group row col-6">
                             <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
                             <div className="col-sm-10">
-                                <input onChange={this.handleChanged} value={this.state.zip}
+                                <input onChange={this.handleChanged} value={this.state.zip || ''}
                                        type="text" name="zip" className="form-control" id="zip"
                                        placeholder="Zip"/>
                             </div>
@@ -215,7 +215,7 @@ export default class UserEditor extends Component {
                         <div className="form-group row col-6">
                             <label htmlFor="phone" className="col-sm-2 col-form-label">Phone</label>
                             <div className="col-sm-10">
-                                <input onChange={this.handleChanged} value={this.state.phone}
+                                <input onChange={this.handleChanged} value={this.state.phone || ''}
                                        type="text" name="phone" className="form-control" id="phone"
                                        placeholder="Phone"/>
                             </div>

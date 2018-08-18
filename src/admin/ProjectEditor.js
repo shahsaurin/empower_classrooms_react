@@ -60,7 +60,6 @@ export default class ProjectEditor extends Component {
         this.projectService
             .findProjectById(projectId)
             .then((project) => {
-                console.log(project);
                 this.setState({
                     title: project.title,
                     shortDescription: project.shortDescription,
@@ -77,8 +76,6 @@ export default class ProjectEditor extends Component {
             totalPrice: this.state.totalPrice,
             costToComplete: this.state.costToComplete
         };
-        console.log('Updated obj:');
-        console.log(updatedProject);
         this.projectService
             .updateProject(this.state.projectId, updatedProject);
     }
@@ -94,7 +91,7 @@ export default class ProjectEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="title" className="col-sm-2 col-form-label">Title</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.title}
+                            <input onChange={this.handleChanged} value={this.state.title || ''}
                                    type="text" name="title" className="form-control" id="title"
                                    placeholder="Project title"/>
                         </div>
@@ -102,7 +99,7 @@ export default class ProjectEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="shortDescription" className="col-sm-2 col-form-label">Short Description</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.shortDescription}
+                            <input onChange={this.handleChanged} value={this.state.shortDescription || ''}
                                    type="text" name="shortDescription" className="form-control" id="shortDescription"
                                    placeholder="Short Description"/>
                         </div>
@@ -110,7 +107,7 @@ export default class ProjectEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="totalPrice" className="col-sm-2 col-form-label">Total Price</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.totalPrice}
+                            <input onChange={this.handleChanged} value={this.state.totalPrice || ''}
                                    type="text" name="totalPrice" className="form-control" id="totalPrice"
                                    placeholder="Total Price"/>
                         </div>
@@ -118,7 +115,7 @@ export default class ProjectEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="costToComplete" className="col-sm-2 col-form-label">Cost To Complete</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.costToComplete}
+                            <input onChange={this.handleChanged} value={this.state.costToComplete || ''}
                                    type="text" name="costToComplete" className="form-control" id="costToComplete"
                                    placeholder="Cost To Complete"/>
                         </div>

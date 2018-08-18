@@ -58,7 +58,6 @@ export default class SchoolEditor extends Component {
         this.schoolService
             .findSchoolById(schoolId)
             .then((school) => {
-                // console.log(user);
                 this.setState({
                     city: school.city,
                     name: school.name,
@@ -73,8 +72,6 @@ export default class SchoolEditor extends Component {
             city: this.state.city,
             zip: this.state.zip
         };
-        console.log('Updated obj:');
-        console.log(updatedSchool);
         this.schoolService
             .updateSchool(this.state.schoolId, updatedSchool);
     }
@@ -90,7 +87,7 @@ export default class SchoolEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.name}
+                            <input onChange={this.handleChanged} value={this.state.name || ''}
                                    type="text" name="name" className="form-control" id="name"
                                    placeholder="School Name"/>
                         </div>
@@ -98,7 +95,7 @@ export default class SchoolEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.city}
+                            <input onChange={this.handleChanged} value={this.state.city || ''}
                                    type="text" name="city" className="form-control" id="city"
                                    placeholder="City"/>
                         </div>
@@ -106,7 +103,7 @@ export default class SchoolEditor extends Component {
                     <div className="form-group row">
                         <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
                         <div className="col-sm-10">
-                            <input onChange={this.handleChanged} value={this.state.zip}
+                            <input onChange={this.handleChanged} value={this.state.zip || ''}
                                    type="text" name="zip" className="form-control" id="zip"
                                    placeholder="Zip"/>
                         </div>

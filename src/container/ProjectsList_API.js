@@ -18,7 +18,6 @@ export default class ProjectsList_API extends Component {
     }
 
     searchQueryChanged(event) {
-        // console.log(event.target.value);
         this.setState({
             searchQuery: event.target.value
         })
@@ -28,7 +27,6 @@ export default class ProjectsList_API extends Component {
         this.projectService
             .getDonorschooseProjects(this.state.searchQuery)
             .then((projects) => {
-                console.log(projects.proposals);
                 this.setState({projects: projects.proposals});
             });
     }

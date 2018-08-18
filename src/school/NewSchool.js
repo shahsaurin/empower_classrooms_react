@@ -43,7 +43,6 @@ export default class NewSchool extends Component {
         this.schoolService
             .addNewSchool(school)
             .then((school) => {
-                console.log(school);
                 alert('School Created successfully!');
                 let currentUrl = window.location.href;
                 // if(currentUrl.includes('admin')) {

@@ -49,8 +49,6 @@ export default class Register extends Component {
             zip: this.state.zip,
             phone: this.state.phone
         };
-        // console.log(user);
-        // console.log(this.state.userType);
         let schoolId = '';
 
         if(this.state.schoolName && this.state.userType.toLowerCase() === 'teacher') {
@@ -58,11 +56,9 @@ export default class Register extends Component {
                 .findSchoolByName(this.state.schoolName)
                 .then((school) => {
                     schoolId = school[0].id;
-                    // console.log(schoolId);
                     return schoolId;
                 })
                 .then((schoolId) => {
-                    console.log('SchoolId in:' + schoolId);
                     this.userService
                         .createUser(user, this.state.userType, schoolId)
                         .then((user) =>

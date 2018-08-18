@@ -28,7 +28,6 @@ export default class NewProject extends Component {
     componentDidMount() {
         let teacherId = this.props.match.params.teacherId;
         if(teacherId) {
-            console.log('In didMount if: ' + teacherId);
             this.selectTeacher(teacherId);
             this.setState({showTeacherIdField: false});
         } else {
@@ -67,7 +66,6 @@ export default class NewProject extends Component {
         this.projectService
             .addNewProjectForSchool(school, teacherId)
             .then((project) => {
-                console.log(project);
                 alert('Project Created successfully!');
                 // let currentUrl = window.location.href;
                 // window.location = currentUrl.replace('new-school', 'search');
