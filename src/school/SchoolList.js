@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SchoolListItem from "./SchoolListItem";
+import SchoolService from "../services/SchoolService";
 
 export default class SchoolList extends Component {
 
@@ -11,6 +12,7 @@ export default class SchoolList extends Component {
             schools: []
         };
 
+        this.schoolService = SchoolService.instance;
         // this.handleChanged = this.handleChanged.bind(this);
         this.deleteSchool = this.deleteSchool.bind(this);
     }
