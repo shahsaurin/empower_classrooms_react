@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import ProjectService from "../services/ProjectService";
 import ProjectListItem from "./ProjectListItem"
-import DonorService from "../services/DonorService";
 
 
 export default class ProjectList_admin extends Component {

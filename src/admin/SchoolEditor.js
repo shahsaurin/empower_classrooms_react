@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import UserService from "../services/UserService";
 import SchoolService from "../services/SchoolService";
 
 export default class SchoolEditor extends Component {

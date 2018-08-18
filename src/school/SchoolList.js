@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-import SchooolService from "../services/SchoolService";
 import SchoolListItem from "./SchoolListItem";
-import {mySessionStorage} from "../storage/storage";
-// import ProjectListItem from "./ProjectListItem"
 
 export default class SchoolList extends Component {
 

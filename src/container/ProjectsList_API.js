@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
-
-
-
-
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import ProjectService from "../services/ProjectService"
-import ProjectRow from "../components/ProjectRow"
 import ProjectCard from "../components/ProjectCard"
 
 export default class ProjectsList_API extends Component {

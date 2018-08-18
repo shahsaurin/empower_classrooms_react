@@ -1,10 +1,5 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import ProjectList_volunteer from "../project/ProjectList_volunteer";
-import ProjectList_donor from "../project/ProjectList_donor";
-import MessageList from "../message/MessageList";
-import MessageCreator from "../message/MessageCreator";
-import Profile from "../container/Profile";
 import SchoolList from "../school/SchoolList";
 import NewSchool from "../school/NewSchool";
 import {mySessionStorage} from "../storage/storage";

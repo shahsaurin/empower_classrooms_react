@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import SchoolService from "../services/SchoolService";
-import {mySessionStorage} from "../storage/storage";
 
 export default class NewSchool extends Component {
 

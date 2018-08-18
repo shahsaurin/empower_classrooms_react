@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-import UserService from "../services/UserService";
-import SchoolService from "../services/SchoolService";
 import ProjectService from "../services/ProjectService";
 
 export default class ProjectEditor extends Component {

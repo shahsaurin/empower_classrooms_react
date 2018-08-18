@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import SchoolList from "../school/SchoolList";
-import NewSchool from "../school/NewSchool";
-import SchoolEditor from "./SchoolEditor";
+import {BrowserRouter as Router} from 'react-router-dom'
 import MessageService from "../services/MessageService";
 import MessageListItem from "../message/MessageListItem";
 

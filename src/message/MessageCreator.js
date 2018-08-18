@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import MessageService from "../services/MessageService";
-import MessageListItem from "./MessageListItem";
 import VolunteerService from "../services/VolunteerService";
 import TeacherService from "../services/TeacherService";
 import DonorService from "../services/DonorService";

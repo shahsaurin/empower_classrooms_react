@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import UserService from "../services/UserService";
 import NewProject from "../project/NewProject";
 import ProjectList_teacher from "../project/ProjectList_teacher";
 import MessageList from "../message/MessageList";

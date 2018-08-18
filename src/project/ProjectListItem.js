@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import ProjectService from "../services/ProjectService";
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default class ProjectListItem extends Component {
 

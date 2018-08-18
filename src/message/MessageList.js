@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-// import ProjectListItem from "./ProjectListItem"
-import DonorService from "../services/DonorService";
 import MessageService from "../services/MessageService";
 import MessageListItem from "./MessageListItem";
 

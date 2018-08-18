@@ -1,9 +1,5 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import {mySessionStorage} from "../storage/storage";
-import NewProject from "../project/NewProject";
-import ProjectList_admin from "../project/ProjectList_admin";
-import ProjectEditor from "./ProjectEditor";
 import Register from "../container/Register";
 import UsersList from "./UsersList";
 import UserEditor from "./UserEditor";

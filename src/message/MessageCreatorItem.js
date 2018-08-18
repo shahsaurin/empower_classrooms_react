@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ProjectService from "../services/ProjectService";
 import MessageService from "../services/MessageService";
 
 export default class MessageCreatorItem extends Component {
