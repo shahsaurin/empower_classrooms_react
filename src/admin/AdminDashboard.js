@@ -9,6 +9,7 @@ import SchoolManager from "./SchoolManager";
 import {mySessionStorage} from "../storage/storage";
 import ProjectManager from "./ProjectManager";
 import MessageManager from "./MessageManager";
+import UserManager from "./UserManager";
 
 export default class AdminDashboard extends Component {
 
@@ -36,29 +37,44 @@ export default class AdminDashboard extends Component {
             <Router>
                 <div className="container">
                     <h2>Admin Account Home - Id: {this.state.adminId}</h2>
+                    <p>The force is with you!!</p>
 
                     <div className="row">
                         <div className="col-4">
                             <ul>
+                                <p>Domain Objects</p>
                                 <li className="list-group-item">
                                     <Link to={`/admin/${this.state.adminId}/school-manager`}>
                                         Schools
                                     </Link>
                                 </li>
-                            </ul>
-
-                            <ul>
                                 <li className="list-group-item">
                                     <Link to={`/admin/${this.state.adminId}/project-manager`}>
                                         Projects
                                     </Link>
                                 </li>
-                            </ul>
-
-                            <ul>
                                 <li className="list-group-item">
                                     <Link to={`/admin/${this.state.adminId}/message-manager`}>
                                         Messages
+                                    </Link>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <p>Users</p>
+                                <li className="list-group-item">
+                                    <Link to={`/admin/${this.state.adminId}/teacher-manager`}>
+                                        Teachers
+                                    </Link>
+                                </li>
+                                <li className="list-group-item">
+                                    <Link to={`/admin/${this.state.adminId}/volunteer-manager`}>
+                                        Volunteers
+                                    </Link>
+                                </li>
+                                <li className="list-group-item">
+                                    <Link to={`/admin/${this.state.adminId}/donor-manager`}>
+                                        Donors
                                     </Link>
                                 </li>
                             </ul>
@@ -75,6 +91,16 @@ export default class AdminDashboard extends Component {
 
                             <Route path="/admin/:adminId/message-manager"
                                    component={MessageManager}/>
+
+
+                            <Route path="/admin/:adminId/teacher-manager"
+                                   component={UserManager}/>
+
+                            <Route path="/admin/:adminId/volunteer-manager"
+                                   component={UserManager}/>
+
+                            <Route path="/admin/:adminId/donor-manager"
+                                   component={UserManager}/>
                         </div>
 
                     </div>

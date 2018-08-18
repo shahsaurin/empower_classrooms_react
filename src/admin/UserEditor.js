@@ -1,34 +1,48 @@
 import React, {Component} from 'react'
 import UserService from "../services/UserService";
 import SchoolService from "../services/SchoolService";
+import VolunteerService from "../services/VolunteerService";
+import TeacherService from "../services/TeacherService";
+import DonorService from "../services/DonorService";
 
-export default class Profile extends Component {
+export default class UserEditor extends Component {
 
     constructor(props) {
         super(props);
+        this.teacherService = TeacherService.instance;
+        this.volunteerService = VolunteerService.instance;
+        this.donorService = DonorService.instance;
         this.userService = UserService.instance;
-        this.schoolService = SchoolService.instance;
 
         this.state = {
+            adminId: '',
             userId: '',
+            userType: '',
+        // Generic User attributes:
             firstName: '',
             lastName: '',
             username: '',
             password: '',
-            email: '',
             // dob: '',
+            email: '',
             city: '',
             state: '',
             zip: '',
-            phone: ''
+            phone: '',
+        // //    Teacher specific:
+        //     projectInitiated: '',
+        // //    Volunteer specific::
+        //     projectsApproved: '',
+        // //    Donor specific:
+        //     contributedProjects: '',
+        //     totalAmountDonated: ''
         };
 
         this.handleChanged = this.handleChanged.bind(this);
-        this.selectCurrentUser = this.selectCurrentUser.bind(this);
+        this.selectAdmin = this.selectAdmin.bind(this);
+        // this.selectSchool = this.selectSchool.bind(this);
         // this.registerUser = this.registerUser.bind(this);
-        this.findUserById = this.findUserById.bind(this);
-        this.updateProfle = this.updateProfle.bind(this);
-        this.deleteAccount = this.deleteAccount.bind(this);
+        this.updateUser = this.updateUser.bind(this);
     }
 
     handleChanged(event) {
@@ -37,41 +51,68 @@ export default class Profile extends Component {
         });
     }
 
-    selectCurrentUser(currentUserId) {
-        this.setState({userId: currentUserId});
+    selectAdmin(adminId) {
+        this.setState({adminId: adminId});
+    }
+
+    selectUser(userId) {
+        this.setState({userId: userId});
     }
 
     componentDidMount() {
-        let currentUserId = this.props.match.params.teacherId ||
-            this.props.match.params.volunteerId ||
-            this.props.match.params.donorId;
-        this.selectCurrentUser(currentUserId);
-        this.findUserById(currentUserId);
+        let
+            adminId = this.props.match.params.adminId,
+            userId = this.props.match.params.teacherId ||
+                this.props.match.params.volunteerId ||
+                this.props.match.params.donorId;
+        this.selectAdmin(adminId);
+        this.selectUser(userId);
+        if(this.props.match.params.teacherId) {
+            this.setState({userType: 'teacher'});
+        } else if(this.props.match.params.volunteerId) {
+            this.setState({userType: 'volunteer'});
+        } else {
+            this.setState({userType: 'donor'});
+        }
+        this.findUserById(userId);
     }
 
-    findUserById(currentUserId) {
+    // componentDidUpdate(prevProps) {
+    //     // Typical usage (don't forget to compare props):
+    //     if (this.props.match.params.schoolId !== prevProps.match.params.schoolId) {
+    //         let schoolId = this.props.match.params.schoolId;
+    //         this.selectSchool(schoolId);
+    //         this.findSchoolById(this.props.match.params.schoolId);
+    //     }
+    // }
+
+    findUserById(userId) {
         this.userService
-            .findUserById(currentUserId)
+            .findUserById(userId)
             .then((user) => {
-                console.log(user);
                 this.setState({
                     firstName: user.firstName,
                     lastName: user.lastName,
                     username: user.username,
                     password: user.password,
-                    email: user.email,
                     // dob: user.dob,
+                    email: user.email,
                     city: user.city,
                     state: user.state,
+                    phone: user.phone,
                     zip: user.zip,
-                    phone:user.phone
+                    //    Teacher specific:
+                    projectInitiated: user.projectInitiated,
+                    //    Volunteer specific::
+                    projectsApproved: user.projectsApproved,
+                    //    Donor specific:
+                    contributedProjects: user.contributedProjects,
+                    totalAmountDonated: user.totalAmountDonated
                 })
-
-            })
+            });
     }
 
-
-    updateProfle() {
+    updateUser() {
         let updatedUser = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -84,29 +125,16 @@ export default class Profile extends Component {
             zip: this.state.zip,
             phone: this.state.phone
         };
-        console.log('Updated obj:');
-        console.log(updatedUser);
         this.userService
             .updateUser(this.state.userId, updatedUser);
     }
 
 
-    deleteAccount() {
-        this.userService
-            .deleteUser(this.state.userId)
-            .then((error) => {
-                if(!error) {
-                    alert('Account deleted');
-                    window.location = ''
-                }
-            });
-    }
-
     render() {
         return (
             <div className="container">
                 <div>
-                    <h2>Profile</h2>
+                    <h2>Edit {(this.state.userType==='teacher') ? 'Teacher' : (this.state.userType==='volunteer' ? 'Volunteer' : 'Donor')}</h2>
                 </div>
                 <form>
                     <div className="form-group row">
@@ -197,12 +225,8 @@ export default class Profile extends Component {
                 </form>
 
                 <div className="form-group row">
-                    <button onClick={this.updateProfle}
-                            className="btn btn-block btn-success">Update Profile</button>
-                </div>
-                <div className="form-group row">
-                    <button onClick={this.deleteAccount}
-                            className="btn btn-block btn-danger">Delete Account</button>
+                    <button onClick={this.updateUser}
+                            className="btn btn-block btn-success">Update {(this.state.userType==='teacher') ? 'Teacher' : (this.state.userType==='volunteer' ? 'Volunteer' : 'Donor')} Details</button>
                 </div>
             </div>
         );
