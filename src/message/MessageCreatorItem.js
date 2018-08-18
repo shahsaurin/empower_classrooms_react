@@ -34,8 +34,7 @@ export default class MessageCreatorItem extends Component {
             <li className="list-group-item">
                 <div className="container-fluid">
                     <div className="row">
-                        {/*<div className="col-9">*/}
-                        {/*<Link to={`/course/${this.props.courseId}/module/${this.props.module.id}`}>*/}
+
                         <div className="col-md-4">
                             <ul>
                                 {/*<li className={this.props.isInbox ? '' : 'hidden'}>From: {this.props.message.sender.id}</li>*/}

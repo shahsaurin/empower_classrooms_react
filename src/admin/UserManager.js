@@ -49,45 +49,51 @@ export default class UserManager extends Component {
                     {/*<h2>{this.state.userType}</h2>*/}
                     <ul className={(this.state.userType==='teacher') ? "nav nav-tabs" : 'hidden'} id="myTab" role="tablist">
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/teacher-manager/new-teacher`}>
-                                <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">New Teacher</a>
+                            <Link to={`/admin/${this.state.adminId}/teacher-manager/new-teacher`}
+                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  aria-controls="home" aria-selected="true">
+                                New Teacher
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/teacher-manager/teachers`}>
-                                <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">Teachers</a>
+                            <Link to={`/admin/${this.state.adminId}/teacher-manager/teachers`}
+                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  aria-controls="home" aria-selected="true">
+                                Teachers
                             </Link>
                         </li>
                     </ul>
 
                     <ul className={(this.state.userType==='volunteer') ? "nav nav-tabs" : 'hidden'} id="myTab" role="tablist">
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/volunteer-manager/new-volunteer`}>
-                                <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">New Volunteer</a>
+                            <Link to={`/admin/${this.state.adminId}/volunteer-manager/new-volunteer`}
+                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  aria-controls="home" aria-selected="true">
+                                New Volunteer
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/volunteer-manager/volunteers`}>
-                                <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">Volunteers</a>
+                            <Link to={`/admin/${this.state.adminId}/volunteer-manager/volunteers`}
+                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  aria-controls="home" aria-selected="true">
+                                Volunteers
                             </Link>
                         </li>
                     </ul>
 
                     <ul className={(this.state.userType==='donor') ? "nav nav-tabs" : 'hidden'} id="myTab" role="tablist">
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/donor-manager/new-donor`}>
-                                <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">New Donor</a>
+                            <Link to={`/admin/${this.state.adminId}/donor-manager/new-donor`}
+                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  aria-controls="home" aria-selected="true">
+                                New Donor
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/donor-manager/donors`}>
-                                <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
-                                   aria-controls="home" aria-selected="true">Donors</a>
+                            <Link to={`/admin/${this.state.adminId}/donor-manager/donors`}
+                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  aria-controls="home" aria-selected="true">
+                                Donors
                             </Link>
                         </li>
                     </ul>

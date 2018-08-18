@@ -30,7 +30,6 @@ export default class ProjectListItem extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-9">
-                            {/*<Link to={`/course/${this.props.courseId}/module/${this.props.module.id}`}>*/}
                             <ul>
                                 <li>Title: {this.props.project.title}</li>
                                 <li>Short Description: {this.props.project.shortDescription}</li>
@@ -38,8 +37,6 @@ export default class ProjectListItem extends Component {
                                 <li>Cost to Complete: {this.props.project.costToComplete}</li>
                                 <li>Approval Status: {this.state.approved}</li>
                             </ul>
-
-                            {/*</Link>*/}
                         </div>
 
                         <div className="col-3">
