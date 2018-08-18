@@ -30,14 +30,14 @@ export default class ProjectManager extends Component {
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/project-manager/new-project`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 New Project
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/project-manager/projects`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 Projects
                             </Link>

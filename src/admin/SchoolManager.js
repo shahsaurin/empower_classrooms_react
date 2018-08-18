@@ -30,14 +30,14 @@ export default class SchoolManager extends Component {
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/school-manager/new-school`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 New School
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/school-manager/schools`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 Schools
                             </Link>

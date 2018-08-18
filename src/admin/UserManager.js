@@ -50,14 +50,14 @@ export default class UserManager extends Component {
                     <ul className={(this.state.userType==='teacher') ? "nav nav-tabs" : 'hidden'} id="myTab" role="tablist">
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/teacher-manager/new-teacher`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 New Teacher
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/teacher-manager/teachers`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 Teachers
                             </Link>
@@ -67,14 +67,14 @@ export default class UserManager extends Component {
                     <ul className={(this.state.userType==='volunteer') ? "nav nav-tabs" : 'hidden'} id="myTab" role="tablist">
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/volunteer-manager/new-volunteer`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 New Volunteer
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/volunteer-manager/volunteers`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 Volunteers
                             </Link>
@@ -84,14 +84,14 @@ export default class UserManager extends Component {
                     <ul className={(this.state.userType==='donor') ? "nav nav-tabs" : 'hidden'} id="myTab" role="tablist">
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/donor-manager/new-donor`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 New Donor
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to={`/admin/${this.state.adminId}/donor-manager/donors`}
-                                  activeClassName="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+                                  className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                   aria-controls="home" aria-selected="true">
                                 Donors
                             </Link>
