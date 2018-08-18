@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import SchoolList from "../school/SchoolList";
 import NewSchool from "../school/NewSchool";
-import {mySessionStorage} from "../storage/storage";
 import SchoolEditor from "./SchoolEditor";
 
 export default class SchoolManager extends Component {

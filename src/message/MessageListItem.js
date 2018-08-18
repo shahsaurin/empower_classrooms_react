@@ -2,22 +2,6 @@ import React, {Component} from 'react'
 
 export default class MessageListItem extends Component {
 
-    constructor(props) {
-        super(props);
-        // this.state = {
-        //     isInbox: ''
-        // };
-
-    }
-
-    componentDidMount() {
-        // if(this.props.project.isApproved) {
-        //     this.setState({approved: 'Complete'});
-        // } else {
-        //     this.setState({approved: 'Pending'});
-        // }
-    }
-
     render() {
         return (
             <li className="list-group-item">

@@ -46,10 +46,6 @@ export default class MessageCreator extends Component {
     //If current user: Teacher/Donor ---> Find possible recipients = All Volunteers
     //If current user: Volunteer ---> Find possible recipients = All Teachers + All Donors
     findAllPossibleRecipients() {
-        let currentUserId = this.props.match.params.teacherId ||
-            this.props.match.params.volunteerId ||
-            this.props.match.params.donorId;
-
         if(this.props.match.params.donorId || this.props.match.params.teacherId) {
             this.volunteerService
                 .findAllVolunteers()

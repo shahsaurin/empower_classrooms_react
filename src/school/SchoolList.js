@@ -5,7 +5,6 @@ export default class SchoolList extends Component {
 
     constructor(props) {
         super(props);
-        this.schoolService = SchooolService.instance;
 
         this.state = {
             adminId: '',

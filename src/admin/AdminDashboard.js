@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import SchoolManager from "./SchoolManager";
-import {mySessionStorage} from "../storage/storage";
 import ProjectManager from "./ProjectManager";
 import MessageManager from "./MessageManager";
 import UserManager from "./UserManager";

@@ -2,10 +2,6 @@ import React from 'react';
 
 export default class ProjectCard extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="card" styles={{width: '18rem'}}>
@@ -13,7 +9,7 @@ export default class ProjectCard extends React.Component {
 
 
                 <div className="col-4">
-                    <img className="card-img-top" src={this.props.project.imageURL}/>
+                    <img className="card-img-top" src={this.props.project.imageURL} alt=""/>
                 </div>
                 <div className="col-8">
                     <div className="card-body">
