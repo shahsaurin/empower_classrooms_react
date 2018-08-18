@@ -44,6 +44,21 @@ class MessageService {
             return response;
         })
     }
+
+    findAllMessages() {
+        return fetch(BASE_URL + '/api/message/')
+            .then((response) => {
+                return response.json();
+            })
+    }
+
+    deleteMessageById(messageId) {
+        return fetch(BASE_URL + '/api/message/' + messageId, {
+            method: 'delete'
+        }).then(function (response) {
+            return response;
+        })
+    }
 }
 
 export default MessageService;

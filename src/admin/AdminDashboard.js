@@ -8,6 +8,7 @@ import Profile from "../container/Profile";
 import SchoolManager from "./SchoolManager";
 import {mySessionStorage} from "../storage/storage";
 import ProjectManager from "./ProjectManager";
+import MessageManager from "./MessageManager";
 
 export default class AdminDashboard extends Component {
 
@@ -41,7 +42,7 @@ export default class AdminDashboard extends Component {
                             <ul>
                                 <li className="list-group-item">
                                     <Link to={`/admin/${this.state.adminId}/school-manager`}>
-                                        School
+                                        Schools
                                     </Link>
                                 </li>
                             </ul>
@@ -49,7 +50,15 @@ export default class AdminDashboard extends Component {
                             <ul>
                                 <li className="list-group-item">
                                     <Link to={`/admin/${this.state.adminId}/project-manager`}>
-                                        Project
+                                        Projects
+                                    </Link>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li className="list-group-item">
+                                    <Link to={`/admin/${this.state.adminId}/message-manager`}>
+                                        Messages
                                     </Link>
                                 </li>
                             </ul>
@@ -63,6 +72,9 @@ export default class AdminDashboard extends Component {
 
                             <Route path="/admin/:adminId/project-manager"
                                    component={ProjectManager}/>
+
+                            <Route path="/admin/:adminId/message-manager"
+                                   component={MessageManager}/>
                         </div>
 
                     </div>
