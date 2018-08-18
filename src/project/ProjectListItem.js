@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ProjectService from "../services/ProjectService";
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 export default class ProjectListItem extends Component {
 
@@ -8,7 +9,7 @@ export default class ProjectListItem extends Component {
         this.state = {
             approved: '',
             donationAmount: ''
-        }
+        };
         this.amountChanged = this.amountChanged.bind(this);
     }
 
@@ -67,6 +68,15 @@ export default class ProjectListItem extends Component {
                                         }>
                                     Donate
                                 </button>
+                            </div>
+
+                            <div className={this.props.updateButton ? '' : 'hidden'}>
+                                <Link to={`/admin/${this.props.admin}/project-manager/project/${this.props.project.id}/edit`}>
+                                    <span className="float-right">
+                                        <i className="fa fa-pencil-square-o m-2">
+                                        </i>
+                                    </span>
+                                </Link>
                             </div>
                         </div>
 

@@ -34,7 +34,7 @@ export default class SchoolListItem extends Component {
                                     {/*<i className="fa fa-pencil"></i>*/}
                                 </span>
 
-                                <Link to={`/admin/${this.props.admin.id}/school-control/school/${this.props.school.id}/edit`}>
+                                <Link to={`/admin/${this.props.admin}/school-manager/school/${this.props.school.id}/edit`}>
                                     <span className="float-right">
                                         <i className="fa fa-pencil-square-o m-2" aria-hidden="true"
                                            ></i>

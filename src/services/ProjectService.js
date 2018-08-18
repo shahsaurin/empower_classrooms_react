@@ -35,6 +35,20 @@ class ProjectService {
         })
     }
 
+    findAllProjects() {
+        return fetch(BASE_URL + '/api/project')
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
+    findProjectById(projectId) {
+        return fetch(BASE_URL + '/api/project/' + projectId)
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
     findAllProjectsForTeacher(teacherId) {
         return fetch(BASE_URL + '/api/project?teacherId=' + teacherId)
             .then(function (response) {
@@ -47,6 +61,16 @@ class ProjectService {
             .then(function (response) {
                 return response.json();
             })
+    }
+
+    updateProject(projectId, updatedProject) {
+        return fetch(BASE_URL + '/api/project/' + projectId, {
+            body: JSON.stringify(updatedProject),
+            headers: {'Content-type': 'application/json'},
+            method: 'PUT'
+        }).then(function (response) {
+            return response.json();
+        })
     }
 
 

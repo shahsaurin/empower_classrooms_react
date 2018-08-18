@@ -41,7 +41,7 @@ export default class SchoolManager extends Component {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/school-manager/school`}>
+                            <Link to={`/admin/${this.state.adminId}/school-manager/schools`}>
                                 <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                    aria-controls="home" aria-selected="true">Schools</a>
                             </Link>
@@ -55,7 +55,7 @@ export default class SchoolManager extends Component {
                         <Route path="/admin/:adminId/school-manager/school/:schoolId/edit"
                                component={SchoolEditor}/>
 
-                        <Route path="/admin/:adminId/school-manager/school"
+                        <Route path="/admin/:adminId/school-manager/schools"
                                component={SchoolList}/>
 
                     </div>

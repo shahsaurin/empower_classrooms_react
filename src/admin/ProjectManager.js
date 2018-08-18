@@ -10,6 +10,8 @@ import NewSchool from "../school/NewSchool";
 import {mySessionStorage} from "../storage/storage";
 import SchoolEditor from "./SchoolEditor";
 import NewProject from "../project/NewProject";
+import ProjectList_admin from "../project/ProjectList_admin";
+import ProjectEditor from "./ProjectEditor";
 
 export default class ProjectManager extends Component {
 
@@ -42,7 +44,7 @@ export default class ProjectManager extends Component {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={`/admin/${this.state.adminId}/project-manager/project`}>
+                            <Link to={`/admin/${this.state.adminId}/project-manager/projects`}>
                                 <a className="nav-link active" id="home-tab" data-toggle="tab" role="tab"
                                    aria-controls="home" aria-selected="true">Projects</a>
                             </Link>
@@ -53,11 +55,11 @@ export default class ProjectManager extends Component {
                         <Route path="/admin/:adminId/project-manager/new-project"
                                component={NewProject}/>
 
-                        {/*<Route path="/admin/:adminId/project-manager/project/:projectId/edit"*/}
-                               {/*component={ProjectEditor}/>*/}
+                        <Route path="/admin/:adminId/project-manager/project/:projectId/edit"
+                               component={ProjectEditor}/>
 
-                        {/*<Route path="/admin/:adminId/project-manager/project"*/}
-                               {/*component={ProjectList}/>*/}
+                        <Route path="/admin/:adminId/project-manager/projects"
+                               component={ProjectList_admin}/>
 
                     </div>
                 </div>
