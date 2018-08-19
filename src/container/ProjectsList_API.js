@@ -58,21 +58,21 @@ export default class ProjectsList_API extends Component {
                         <div className="col-12 pull-right">
                             {/*<div className="col-4 pull-right">*/}
                                 <Link to={`/new-school`}>
-                                    <button className="btn btn-primary pull-right m-2">+ School</button>
+                                    <button className="btn btn-outline-danger pull-right m-2">+ School</button>
                                     {/*+School*/}
                                 </Link>
                             {/*</div>*/}
 
                             {/*<div className="col-4 pull-right">*/}
                                 <Link to={`/register`}>
-                                    <button className="btn btn-warning pull-right m-2">Register</button>
+                                    <button className="btn btn-outline-primary pull-right m-2">Register</button>
                                     {/*Register*/}
                                 </Link>
                             {/*</div>*/}
 
                             {/*<div className="col-4 pull-right">*/}
                                 <Link to={`/login`}>
-                                    <button className="btn btn-success pull-right m-2">Login</button>
+                                    <button className="btn btn-outline-success pull-right m-2">Login</button>
                                     {/*Login*/}
                                 </Link>
                             {/*</div>*/}
