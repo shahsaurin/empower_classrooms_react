@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom'
 import ProjectsList_API from "./ProjectsList_API";
 import Register from "./Register";
 import Login from "./Login";
@@ -28,6 +28,14 @@ export default class Homepage extends Component {
                     </div>
 
                     <div className="row">
+
+                        <Route exact path="/" render={() => (
+                            // loggedIn ? (
+                            //     <Redirect to="/dashboard"/>
+                            // ) : (
+                                <ProjectsList_API/>
+                        )}/>
+
                         <Route path="/search"
                                component={ProjectsList_API}/>
 
