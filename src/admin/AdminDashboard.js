@@ -29,12 +29,13 @@ export default class AdminDashboard extends Component {
     render() {
         return (
             <Router>
-                <div className="container">
-                    <h2>Admin Account Home - Id: {this.state.adminId}</h2>
-                    <p>The force is with you!!</p>
+                <div className="container m-2">
+                    {/*<h2>Admin Account Home - Id: {this.state.adminId}</h2>*/}
+                    <h5>Admin Home</h5>
+                    <h5>The force is with you!!</h5>
 
-                    <div className="row">
-                        <div className="col-4">
+                    <div className="row mt-4">
+                        <div className="col-sm-4">
                             <ul>
                                 <p>Domain Objects</p>
                                 <li className="list-group-item">
@@ -75,7 +76,7 @@ export default class AdminDashboard extends Component {
 
                         </div>
 
-                        <div className="col-8">
+                        <div className="col-sm-8">
 
                             <Route path="/admin/:adminId/school-manager"
                                    component={SchoolManager}/>

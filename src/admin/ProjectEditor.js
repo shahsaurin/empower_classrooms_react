@@ -77,7 +77,12 @@ export default class ProjectEditor extends Component {
             costToComplete: this.state.costToComplete
         };
         this.projectService
-            .updateProject(this.state.projectId, updatedProject);
+            .updateProject(this.state.projectId, updatedProject)
+            .then((project) => {
+                if(project) {
+                    alert("Project updated successfully!");
+                }
+            });
     }
 
 

@@ -36,7 +36,7 @@ export default class TeacherDashboard extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                            <ul>
+                            <ul className="list-group">
                                 <li className="list-group-item">
                                     <Link to={`/teacher/${this.state.teacherId}/profile`}>
                                         My Profile

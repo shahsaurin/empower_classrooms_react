@@ -94,24 +94,26 @@ export default class Register extends Component {
                         </div>
 
                         <form>
-                            <div className="row btn-group btn-group-toggle mb-4 ml-1" id="userType_2" data-toggle="buttons">
-                                <label className={this.state.userType==='teacher' ? "btn btn-secondary active" : "btn btn-secondary"}
-                                       onChange={this.userTypeSelected}>
-                                    <input type="radio" name="options" id="option1"
-                                           autoComplete="off" value="teacher"/> Teacher
-                                </label>
-                                <label className={this.state.userType==='volunteer' ? "btn btn-secondary active" : "btn btn-secondary"}
-                                       onChange={this.userTypeSelected}>
-                                    <input type="radio" name="options" id="option2"
-                                           autoComplete="off" value="volunteer"/> Volunteer
-                                </label>
-                                <label className={this.state.userType==='donor' ? "btn btn-secondary active" : "btn btn-secondary"}
-                                       onChange={this.userTypeSelected}>
-                                    <input type="radio" name="options" id="option3"
-                                           autoComplete="off" value="donor"/> Donor
-                                </label>
+                            <div className="form-group row">
+                                <label htmlFor="userType" className="col-sm-3 col-form-label">User Type</label>
+                                <div className="row col-sm-9 btn-group btn-group-toggle" id="userType" data-toggle="buttons">
+                                    <label className={this.state.userType==='teacher' ? "btn btn-secondary active" : "btn btn-secondary"}
+                                           onChange={this.userTypeSelected}>
+                                        <input type="radio" name="options" id="option1"
+                                               autoComplete="off" value="teacher"/> Teacher
+                                    </label>
+                                    <label className={this.state.userType==='volunteer' ? "btn btn-secondary active" : "btn btn-secondary"}
+                                           onChange={this.userTypeSelected}>
+                                        <input type="radio" name="options" id="option2"
+                                               autoComplete="off" value="volunteer"/> Volunteer
+                                    </label>
+                                    <label className={this.state.userType==='donor' ? "btn btn-secondary active" : "btn btn-secondary"}
+                                           onChange={this.userTypeSelected}>
+                                        <input type="radio" name="options" id="option3"
+                                               autoComplete="off" value="donor"/> Donor
+                                    </label>
+                                </div>
                             </div>
-
 
                             {/*<div className="form-group row">*/}
                                 {/*<label htmlFor="userType" className="col-sm-2 col-form-label">User Type</label>*/}

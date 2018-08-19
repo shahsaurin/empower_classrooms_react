@@ -13,7 +13,7 @@ export default class SchoolListItem extends Component {
 
     render() {
         return (
-            <li className="list-group-item">
+            <li className="list-group-item m-1">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-9">

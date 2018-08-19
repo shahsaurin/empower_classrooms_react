@@ -125,7 +125,12 @@ export default class UserEditor extends Component {
             phone: this.state.phone
         };
         this.userService
-            .updateUser(this.state.userId, updatedUser);
+            .updateUser(this.state.userId, updatedUser)
+            .then((response) => {
+                if(response) {
+                    alert("User details updated successfully");
+                }
+            });
     }
 
 

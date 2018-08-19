@@ -6,7 +6,7 @@ import Homepage from "./container/Homepage";
 import './stylesheets/style.css'
 
 ReactDOM.render(
-    <div className="container-fluid">
+    <div className="container-fluid ss-bg-color">
         <Homepage/>
     </div>,
     document.getElementById('root')

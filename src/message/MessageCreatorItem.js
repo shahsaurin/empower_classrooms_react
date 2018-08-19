@@ -35,7 +35,7 @@ export default class MessageCreatorItem extends Component {
 
     render() {
         return (
-            <li className="list-group-item">
+            <li className="list-group-item m-1">
                 <div className="container-fluid">
                     <div className="row">
 

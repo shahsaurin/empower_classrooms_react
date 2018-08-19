@@ -16,10 +16,10 @@ export default class Homepage extends Component {
             <Router>
                 <div className="container">
                     <div className="row">
-                        <div className="col-8 pt-2">
+                        <div className="col-8 p-3">
                             <h3>Empower Classrooms</h3>
                         </div>
-                        <div className="col-4 pull-right">
+                        <div className="col-4 pull-right p-2">
                             <Link to={`/search`}>
                                 <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
                                 {/*<button className="btn btn-danger pull-right">Home</button>*/}
