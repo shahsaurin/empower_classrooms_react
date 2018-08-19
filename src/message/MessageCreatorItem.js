@@ -14,7 +14,11 @@ export default class MessageCreatorItem extends Component {
 
     sendMessage(senderId, recipientId, messageText) {
         this.messageService
-            .sendMessage(senderId, recipientId, messageText);
+            .sendMessage(senderId, recipientId, messageText)
+            .then(() => {
+                alert('Message sent successfully!');
+                this.setState({messageText: ''});
+            });
     }
 
     messageTextChanged(event) {
@@ -36,15 +40,15 @@ export default class MessageCreatorItem extends Component {
                     <div className="row">
 
                         <div className="col-md-4">
-                            <ul>
+                            {/*<ul>*/}
                                 {/*<li className={this.props.isInbox ? '' : 'hidden'}>From: {this.props.message.sender.id}</li>*/}
                                 {/*<li className={this.props.isInbox ? 'hidden' : ''}>To: {this.props.message.recipient.id}</li>*/}
-                                <li>User Id: {this.props.user.id}</li>
-                                <li>First Name: {this.props.user.firstName}</li>
-                                <li>Last Name: {this.props.user.lastName}</li>
+                                {/*<li>User Id: {this.props.user.id}</li>*/}
+                                <p>{this.props.user.firstName} {this.props.user.lastName}</p>
+                                {/*<li>Last Name: {this.props.user.lastName}</li>*/}
                                 {/*<li>Date: {this.props.message.lastUpdated}</li>*/}
 
-                            </ul>
+                            {/*</ul>*/}
                         </div>
                         <div className="col-md-8">
                             <input onChange={this.messageTextChanged}

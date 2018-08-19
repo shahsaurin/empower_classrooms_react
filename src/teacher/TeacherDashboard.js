@@ -31,11 +31,11 @@ export default class TeacherDashboard extends Component {
         return (
             <Router>
                 <div className="container">
-                    <h2>Teacher Account Home - Id: {this.state.teacherId}</h2>
+                    <h2>Teacher Home: {this.state.teacherId}</h2>
                     {/*<h3>Total Projects initiated: {}*/}
 
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-sm-4">
                             <ul>
                                 <li className="list-group-item">
                                     <Link to={`/teacher/${this.state.teacherId}/profile`}>
@@ -76,7 +76,7 @@ export default class TeacherDashboard extends Component {
 
                         </div>
 
-                        <div className="col-8">
+                        <div className="col-sm-8">
 
                             <Route path="/teacher/:teacherId/profile"
                                    component={Profile}/>

@@ -93,7 +93,6 @@ export default class ProjectList_volunteer extends Component {
             <div className="container">
                 <div>
                     <h3>Projects List</h3>
-                    {/*<h3>Total projects = {this.state.projects.length}</h3>*/}
 
                     <ul className="list-group">
                         {this.renderListOfProjects()}

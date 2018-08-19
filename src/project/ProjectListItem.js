@@ -31,8 +31,8 @@ export default class ProjectListItem extends Component {
                     <div className="row">
                         <div className="col-9">
                             <ul>
-                                <li>Title: {this.props.project.title}</li>
-                                <li>Short Description: {this.props.project.shortDescription}</li>
+                                <h3>{this.props.project.title}</h3>
+                                <p>{this.props.project.shortDescription}</p>
                                 <li>Total Price: {this.props.project.totalPrice}</li>
                                 <li>Cost to Complete: {this.props.project.costToComplete}</li>
                                 <li>Approval Status: {this.state.approved}</li>

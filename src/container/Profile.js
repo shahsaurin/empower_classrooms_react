@@ -91,11 +91,11 @@ export default class Profile extends Component {
     deleteAccount() {
         this.userService
             .deleteUser(this.state.userId)
-            .then((error) => {
-                if(!error) {
+            .then((success, error) => {
+                // if(!error) {
                     alert('Account deleted');
-                    window.location = ''
-                }
+                    window.location.pathname = '/login';
+                // }
             });
     }
 

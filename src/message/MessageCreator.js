@@ -102,8 +102,9 @@ export default class MessageCreator extends Component {
         return (
             <div className="container">
                 <div>
-                    <h3>Users List</h3>
-                    {/*<h3>Total projects = {this.state.projects.length}</h3>*/}
+                    {/*BELOW LOGIC DOESN'T WORK FOR DONORS*/}
+                    {/*<h3>Available {this.state.teacherRecipients.length ? 'Teachers'*/}
+                        {/*// : (this.state.donorRecipients.length ? 'Donors' : 'Volunteers')}' List</h3>*/}
 
                     <ul className="list-group">
                         {this.renderListOfUsers()}

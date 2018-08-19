@@ -78,10 +78,6 @@ export default class Register extends Component {
                     alert("Account created successfully!!")
                 );
         }
-
-
-            // .then(() => {})
-    //    SET STATE Id
     }
 
 

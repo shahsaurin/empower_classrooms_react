@@ -30,10 +30,10 @@ export default class DonorDashboard extends Component {
         return (
             <Router>
                 <div className="container">
-                    <h2>Donor Account Home - Id: {this.state.donorId}</h2>
+                    <h2>Donor Home - Id: {this.state.donorId}</h2>
 
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-sm-4">
                             <ul>
                                 <li className="list-group-item">
                                     <Link to={`/donor/${this.state.donorId}/profile`}>
@@ -67,7 +67,7 @@ export default class DonorDashboard extends Component {
 
                         </div>
 
-                        <div className="col-8">
+                        <div className="col-sm-8">
 
                             <Route path="/donor/:donorId/profile"
                                    component={Profile}/>

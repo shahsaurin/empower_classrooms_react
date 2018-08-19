@@ -9,14 +9,14 @@ export default class MessageListItem extends Component {
                     <div className="row">
                         <div className="col-md-10">
                             <ul>
-                                <li className={this.props.isInbox ? '' : 'hidden'}>From: {this.props.message.sender.id}</li>
-                                <li className={this.props.isInbox ? 'hidden' : ''}>To: {this.props.message.recipient.id}</li>
-                                <li>Message: {this.props.message.description}</li>
-                                <li>Date: {this.props.message.lastUpdated}</li>
+                                <p className={this.props.isInbox ? '' : 'hidden'}>From: {this.props.message.sender.firstName + " " + this.props.message.sender.lastName}</p>
+                                <p className={this.props.isInbox ? 'hidden' : ''}>To: {this.props.message.recipient.firstName + " " + this.props.message.recipient.lastName}</p>
+                                <p>Message: {this.props.message.description}</p>
+                                <p>Date: {this.props.message.lastUpdated}</p>
                             </ul>
                         </div>
 
-                        <div className={"col-md-2" + this.props.delete ? "" : "hidden"}>
+                        <div className={this.props.delete ? "col-md-2" : "hidden"}>
                             <span className="float-right">
                                     <i className="fa fa-trash" onClick={() => {this.props.delete(this.props.message.id)}}></i>
                             </span>

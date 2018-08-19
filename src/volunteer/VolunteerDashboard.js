@@ -30,10 +30,10 @@ export default class VolunteerDashboard extends Component {
         return (
             <Router>
                 <div className="container">
-                    <h2>Volunteer Account Home - Id: {this.state.volunteerId}</h2>
+                    <h2>Volunteer Home - Id: {this.state.volunteerId}</h2>
 
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-sm-4">
                             <ul>
                                 <li className="list-group-item">
                                     <Link to={`/volunteer/${this.state.volunteerId}/profile`}>
@@ -81,7 +81,7 @@ export default class VolunteerDashboard extends Component {
 
                         </div>
 
-                        <div className="col-8">
+                        <div className="col-sm-8">
 
                             <Route path="/volunteer/:volunteerId/profile"
                                    component={Profile}/>
