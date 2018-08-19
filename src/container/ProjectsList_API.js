@@ -48,41 +48,53 @@ export default class ProjectsList_API extends Component {
     render() {
         return(
 
-                <div className="container-fluid">
+                <div className="container">
 
                     <div className="row">
-                        <div className="col-8">
-                            <h3>ProjectsList</h3>
-                            <h3>Search projects from DonorsChoose.org</h3>
+                        {/*<div className="col-6">*/}
+                            {/*/!*<p>Search projects from DonorsChoose.org</p>*!/*/}
+                        {/*</div>*/}
+
+                        <div className="col-12 pull-right">
+                            {/*<div className="col-4 pull-right">*/}
+                                <Link to={`/new-school`}>
+                                    <button className="btn btn-primary pull-right m-2">+ School</button>
+                                    {/*+School*/}
+                                </Link>
+                            {/*</div>*/}
+
+                            {/*<div className="col-4 pull-right">*/}
+                                <Link to={`/register`}>
+                                    <button className="btn btn-warning pull-right m-2">Register</button>
+                                    {/*Register*/}
+                                </Link>
+                            {/*</div>*/}
+
+                            {/*<div className="col-4 pull-right">*/}
+                                <Link to={`/login`}>
+                                    <button className="btn btn-success pull-right m-2">Login</button>
+                                    {/*Login*/}
+                                </Link>
+                            {/*</div>*/}
                         </div>
-                        <div className="col-4">
-                            <Link to={`/login`}>
-                                <button className="btn btn-primary">Login</button>
-                            </Link>
 
-                            <Link to={`/register`}>
-                                <button className="btn btn-warning">Register</button>
-                            </Link>
-
-                            <Link to={`/new-school`}>
-                                <button className="btn btn-danger">Add New School</button>
-                            </Link>
-
-                        </div>
                     </div>
                     {/*<h1>Search projects from DonorsChoose.org</h1>*/}
 
                     <table className="table">
                         <thead>
-                            <tr><th>Search Projects By keywords:</th></tr>
+                            <tr><th>Search projects from DonorsChoose.org</th></tr>
                             <tr>
                                 <th><input onChange={this.searchQueryChanged}
                                            className="form-control"
                                            id="searchFld"
-                                           placeholder="Description, synopsis, city, etc,"/></th>
+                                           placeholder="Enter Keywords: Description, synopsis, city, etc,"/></th>
 
-                                <th><button onClick={this.getDonorschooseProjects}
-                                            className="btn btn-success">Search</button></th>
+                                {/*<th><button onClick={this.getDonorschooseProjects}*/}
+                                            {/*className="btn btn-success">Search</button></th>*/}
+
+                                <th><i onClick={this.getDonorschooseProjects}
+                                       className="fa fa-search fa-2x" aria-hidden="true"></i></th>
                             </tr>
                         </thead>
 

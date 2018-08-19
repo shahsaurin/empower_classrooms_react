@@ -48,33 +48,42 @@ export default class Login extends Component {
     render() {
         return (
             <div className="container">
-                <div>
-                    <h2>Login</h2>
-                </div>
-                <form>
-                    <div className="form-group row">
-                        <label htmlFor="userType" className="col-sm-2 col-form-label">User Type</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="userType" className="form-control" id="userType" placeholder="(*Required*) e.g. Teacher/Volunteer/Donor (write as it is)"/>
-                        </div>
+                <div className="row">
+                    <div className="col-2">
                     </div>
-                    <div className="form-group row">
-                        <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="username" className="form-control" id="username" placeholder="Username"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="password" name="password" className="form-control" id="password" placeholder="Password"/>
-                        </div>
-                    </div>
-                </form>
 
-                <div className="form-group row">
-                        <button onClick={this.login}
-                                className="btn btn-block btn-success">Login</button>
+                    <div className="col-8">
+                        <div className="text-center mb-4">
+                            <h3 className="align-content-center">Login</h3>
+                        </div>
+                        <form>
+                            <div className="form-group row">
+                                <label htmlFor="userType" className="col-sm-2 col-form-label">User Type</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="userType" className="form-control" id="userType" placeholder="(*Required*) e.g. Teacher/Volunteer/Donor (write as it is)"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="username" className="form-control" id="username" placeholder="Username"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="password" name="password" className="form-control" id="password" placeholder="Password"/>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div className="form-group row">
+                                <button onClick={this.login}
+                                        className="btn btn-block btn-success">Login</button>
+                        </div>
+                    </div>
+                    <div className="col-2">
+                    </div>
                 </div>
             </div>
         );

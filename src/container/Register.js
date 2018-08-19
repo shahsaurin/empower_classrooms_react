@@ -82,92 +82,102 @@ export default class Register extends Component {
     render() {
         return (
             <div className="container">
-                <div>
-                    <h2>Register</h2>
-                </div>
-                <form>
-                    <div className="form-group row">
-                        <label htmlFor="userType" className="col-sm-2 col-form-label">User Type</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="userType" className="form-control" id="userType" placeholder="(*Required*) e.g. Teacher/Volunteer/Donor (write as it is)"/>
-                        </div>
+                <div className="row">
+                    <div className="col-2">
                     </div>
-                    <div className="form-group row">
-                        <label htmlFor="schoolName" className="col-sm-2 col-form-label">School Name</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="schoolName" className="form-control" id="schoolName" placeholder="School name (For 'Teacher' only)"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="firstName" className="col-sm-2 col-form-label">First Name</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="firstName" className="form-control" id="firstName" placeholder="First Name"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="lastName" className="col-sm-2 col-form-label">Last Name</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="lastName" className="form-control" id="lastName" placeholder="last Name"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="text" name="username" className="form-control" id="username" placeholder="Username"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="password" name="password" className="form-control" id="password" placeholder="Password"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged} type="email" name="email" className="form-control" id="email" placeholder="Email"/>
-                        </div>
-                    </div>
-                    {/*Uncomment and check if Dates gives rise to any issues*/}
-                    {/*<div className="form-group row">*/}
-                        {/*<label htmlFor="dob" className="col-sm-2 col-form-label">Date of Birth</label>*/}
-                        {/*<div className="col-sm-10">*/}
-                            {/*<input onChange={this.handleChanged} type="date" name="dob" className="form-control" id="dob" placeholder="Date of Birth"/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    <div className="row">
-                        <div className="form-group row col-6">
-                            <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
-                            <div className="col-sm-10">
-                                <input onChange={this.handleChanged} type="text" name="city" className="form-control" id="city" placeholder="City"/>
-                            </div>
-                        </div>
-                        <div className="form-group row col-6">
-                            <label htmlFor="state" className="col-sm-2 col-form-label">State</label>
-                            <div className="col-sm-10">
-                                <input onChange={this.handleChanged} type="text" name="state" className="form-control" id="state" placeholder="State"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="form-group row col-6">
-                            <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
-                            <div className="col-sm-10">
-                                <input onChange={this.handleChanged} type="text" name="zip" className="form-control" id="zip" placeholder="Zip"/>
-                            </div>
-                        </div>
-                        <div className="form-group row col-6">
-                            <label htmlFor="phone" className="col-sm-2 col-form-label">Phone</label>
-                            <div className="col-sm-10">
-                                <input onChange={this.handleChanged} type="text" name="phone" className="form-control" id="phone" placeholder="Phone"/>
-                            </div>
-                        </div>
-                    </div>
-                </form>
 
-                <div className="form-group row">
-                        <button onClick={this.registerUser}
-                                className="btn btn-block btn-primary">Register</button>
+                    <div className="col-8">
+                        <div className="text-center mb-4">
+                            <h3 className="align-content-center">Register</h3>
+                        </div>
+                        <form>
+                            <div className="form-group row">
+                                <label htmlFor="userType" className="col-sm-2 col-form-label">User Type</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="userType" className="form-control" id="userType" placeholder="(*Required*) e.g. Teacher/Volunteer/Donor (write as it is)"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="schoolName" className="col-sm-2 col-form-label">School Name</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="schoolName" className="form-control" id="schoolName" placeholder="School name (For 'Teacher' only)"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="firstName" className="col-sm-2 col-form-label">First Name</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="firstName" className="form-control" id="firstName" placeholder="First Name"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="lastName" className="col-sm-2 col-form-label">Last Name</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="lastName" className="form-control" id="lastName" placeholder="last Name"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="text" name="username" className="form-control" id="username" placeholder="Username"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="password" name="password" className="form-control" id="password" placeholder="Password"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged} type="email" name="email" className="form-control" id="email" placeholder="Email"/>
+                                </div>
+                            </div>
+                            {/*Uncomment and check if Dates gives rise to any issues*/}
+                            {/*<div className="form-group row">*/}
+                                {/*<label htmlFor="dob" className="col-sm-2 col-form-label">Date of Birth</label>*/}
+                                {/*<div className="col-sm-10">*/}
+                                    {/*<input onChange={this.handleChanged} type="date" name="dob" className="form-control" id="dob" placeholder="Date of Birth"/>*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+                            <div className="row">
+                                <div className="form-group row col-6">
+                                    <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
+                                    <div className="col-sm-10">
+                                        <input onChange={this.handleChanged} type="text" name="city" className="form-control" id="city" placeholder="City"/>
+                                    </div>
+                                </div>
+                                <div className="form-group row col-6">
+                                    <label htmlFor="state" className="col-sm-2 col-form-label">State</label>
+                                    <div className="col-sm-10">
+                                        <input onChange={this.handleChanged} type="text" name="state" className="form-control" id="state" placeholder="State"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="form-group row col-6">
+                                    <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
+                                    <div className="col-sm-10">
+                                        <input onChange={this.handleChanged} type="text" name="zip" className="form-control" id="zip" placeholder="Zip"/>
+                                    </div>
+                                </div>
+                                <div className="form-group row col-6">
+                                    <label htmlFor="phone" className="col-sm-2 col-form-label">Phone</label>
+                                    <div className="col-sm-10">
+                                        <input onChange={this.handleChanged} type="text" name="phone" className="form-control" id="phone" placeholder="Phone"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div className="form-group row">
+                                <button onClick={this.registerUser}
+                                        className="btn btn-block btn-primary">Register</button>
+                        </div>
+                    </div>
+
+                    <div className="col-2">
+                    </div>
                 </div>
             </div>
         );

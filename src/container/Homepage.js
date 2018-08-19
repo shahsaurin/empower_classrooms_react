@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ProjectsList_API from "./ProjectsList_API";
 import Register from "./Register";
 import Login from "./Login";
@@ -14,33 +14,44 @@ export default class Homepage extends Component {
     render() {
         return(
             <Router>
-                <div className="container-fluid">
-                    <h2>Homepage</h2>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-8 pt-2">
+                            <h3>Empower Classrooms</h3>
+                        </div>
+                        <div className="col-4 pull-right">
+                            <Link to={`/search`}>
+                                <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
+                                {/*<button className="btn btn-danger pull-right">Home</button>*/}
+                            </Link>
+                        </div>
+                    </div>
 
+                    <div className="row">
+                        <Route path="/search"
+                               component={ProjectsList_API}/>
 
-                    <Route path="/search"
-                           component={ProjectsList_API}/>
+                        <Route path="/register"
+                            component={Register}/>
 
-                    <Route path="/register"
-                        component={Register}/>
+                        <Route path="/login"
+                               component={Login}/>
 
-                    <Route path="/login"
-                           component={Login}/>
+                        <Route path="/new-school"
+                               component={NewSchool}/>
 
-                    <Route path="/new-school"
-                           component={NewSchool}/>
+                        <Route path="/teacher/:teacherId/dashboard"
+                               component={TeacherDashboard}/>
 
-                    <Route path="/teacher/:teacherId/dashboard"
-                           component={TeacherDashboard}/>
+                        <Route path="/volunteer/:volunteerId/dashboard"
+                               component={VolunteerDashboard}/>
 
-                    <Route path="/volunteer/:volunteerId/dashboard"
-                           component={VolunteerDashboard}/>
+                        <Route path="/donor/:donorId/dashboard"
+                               component={DonorDashboard}/>
 
-                    <Route path="/donor/:donorId/dashboard"
-                           component={DonorDashboard}/>
-
-                    <Route path="/admin/:adminId/dashboard"
-                           component={AdminDashboard}/>
+                        <Route path="/admin/:adminId/dashboard"
+                               component={AdminDashboard}/>
+                    </div>
 
 
                 </div>

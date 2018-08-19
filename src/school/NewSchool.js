@@ -60,40 +60,52 @@ export default class NewSchool extends Component {
     render() {
         return (
             <div className="container">
-                <div className="m-2">
-                    <h2>Add New School</h2>
-                </div>
-                <form>
-                    <div className="form-group row">
-                        <label htmlFor="name" className="col-sm-2 col-form-label">School name</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged}
-                                   type="text" name="name" className="form-control" id="name"
-                                   placeholder="School Name"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged}
-                                   type="text" name="city" className="form-control" id="city"
-                                   placeholder="City"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
-                        <div className="col-sm-10">
-                            <input onChange={this.handleChanged}
-                                   type="text" name="zip" className="form-control" id="zip"
-                                   placeholder="Zip"/>
-                        </div>
-                    </div>
-                </form>
+                <div className="row">
 
-                <div className="form-group row">
-                    <div className="offset-sm-2 col-sm-10">
-                        <button onClick={this.addNewSchool}
-                                className="btn btn-block btn-primary">Add school to our database!</button>
+                    <div className="col-1">
+                    </div>
+
+                    <div className="col-10">
+                        <div className={this.state.adminId ? "hidden" : "text-center m-4"}>
+                            <h3 className="align-content-center">Add New School</h3>
+                        </div>
+
+                        <form className={this.state.adminId ? "m-5" : ""}>
+                            <div className="form-group row">
+                                <label htmlFor="name" className="col-sm-2 col-form-label">School name</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged}
+                                           type="text" name="name" className="form-control" id="name"
+                                           placeholder="School Name"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged}
+                                           type="text" name="city" className="form-control" id="city"
+                                           placeholder="City"/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
+                                <div className="col-sm-10">
+                                    <input onChange={this.handleChanged}
+                                           type="text" name="zip" className="form-control" id="zip"
+                                           placeholder="Zip"/>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div className="form-group row">
+                            <div className="offset-sm-2 col-sm-10">
+                                <button onClick={this.addNewSchool}
+                                        className="btn btn-block btn-primary">Add school to our database!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-1">
                     </div>
                 </div>
             </div>
