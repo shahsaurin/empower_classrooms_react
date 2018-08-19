@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ProjectsList_API from "./ProjectsList_API";
 import Register from "./Register";
 import Login from "./Login";
@@ -22,19 +22,15 @@ export default class Homepage extends Component {
                         <div className="col-4 pull-right p-2">
                             <Link to={`/search`}>
                                 <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
-                                {/*<button className="btn btn-danger pull-right">Home</button>*/}
                             </Link>
                         </div>
                     </div>
 
                     <div className="row">
 
-                        <Route exact path="/" render={() => (
-                            // loggedIn ? (
-                            //     <Redirect to="/dashboard"/>
-                            // ) : (
-                                <ProjectsList_API/>
-                        )}/>
+                        {/*Default Route for Homepage*/}
+                        <Route exact path="/"
+                        component={ProjectsList_API}/>
 
                         <Route path="/search"
                                component={ProjectsList_API}/>
