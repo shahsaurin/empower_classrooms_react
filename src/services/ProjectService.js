@@ -1,7 +1,7 @@
 let _singleton = Symbol();
 
-const BASE_URL = 'http://localhost:8080';
-// const DONORSCHOOSE_API_URL = 'http://localhost:8080/api/donorschoose/project';
+// const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://empower-classrooms-backend.herokuapp.com';
 
 class ProjectService {
 

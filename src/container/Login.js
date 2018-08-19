@@ -22,7 +22,7 @@ export default class Login extends Component {
 
 
     userTypeSelected(event) {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         this.setState({userType: event.target.value});
     }
 
