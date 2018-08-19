@@ -4,7 +4,7 @@ export default class ProjectCard extends React.Component {
 
     render() {
         return (
-            <div className="card" styles={{width: '18rem'}}>
+            <div className="card m-4" styles={{width: '18rem'}}>
                 <div className="row">
 
 

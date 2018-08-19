@@ -107,40 +107,40 @@ export default class Profile extends Component {
                 </div>
                 <form>
                     <div className="form-group row">
-                        <label htmlFor="firstName" className="col-sm-2 col-form-label">First Name</label>
-                        <div className="col-sm-10">
+                        <label htmlFor="firstName" className="col-sm-3 col-form-label">First Name</label>
+                        <div className="col-sm-9">
                             <input onChange={this.handleChanged} value={this.state.firstName || ''}
                                    type="text" name="firstName" className="form-control" id="firstName"
                                    placeholder="First Name"/>
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="lastName" className="col-sm-2 col-form-label">Last Name</label>
-                        <div className="col-sm-10">
+                        <label htmlFor="lastName" className="col-sm-3 col-form-label">Last Name</label>
+                        <div className="col-sm-9">
                             <input onChange={this.handleChanged} value={this.state.lastName || ''}
                                    type="text" name="lastName" className="form-control" id="lastName"
                                    placeholder="last Name"/>
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
-                        <div className="col-sm-10">
+                        <label htmlFor="username" className="col-sm-3 col-form-label">Username</label>
+                        <div className="col-sm-9">
                             <input onChange={this.handleChanged} value={this.state.username || ''}
                                    type="text" name="username" className="form-control" id="username"
                                    placeholder="Username"/>
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                        <div className="col-sm-10">
+                        <label htmlFor="password" className="col-sm-3 col-form-label">Password</label>
+                        <div className="col-sm-9">
                             <input onChange={this.handleChanged} value={this.state.password || ''}
                                    type="password" name="password" className="form-control" id="password"
                                    placeholder="Password"/>
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                        <div className="col-sm-10">
+                        <label htmlFor="email" className="col-sm-3 col-form-label">Email</label>
+                        <div className="col-sm-9">
                             <input onChange={this.handleChanged} value={this.state.email || ''}
                                    type="email" name="email" className="form-control" id="email"
                                    placeholder="Email"/>
@@ -148,8 +148,8 @@ export default class Profile extends Component {
                     </div>
                     {/*Uncomment and check if Dates gives rise to any issues*/}
                     {/*<div className="form-group row">*/}
-                    {/*<label htmlFor="dob" className="col-sm-2 col-form-label">Date of Birth</label>*/}
-                    {/*<div className="col-sm-10">*/}
+                    {/*<label htmlFor="dob" className="col-sm-3 col-form-label">Date of Birth</label>*/}
+                    {/*<div className="col-sm-9">*/}
                     {/*<input onChange={this.handleChanged} value={this.state.dob || ''}
                     type="date" name="dob" className="form-control" id="dob"
                     placeholder="Date of Birth"/>*/}
@@ -157,16 +157,16 @@ export default class Profile extends Component {
                     {/*</div>*/}
                     <div className="row">
                         <div className="form-group row col-md-6">
-                            <label htmlFor="city" className="col-sm-2 col-form-label">City</label>
-                            <div className="col-sm-10">
+                            <label htmlFor="city" className="col-sm-3 col-form-label">City</label>
+                            <div className="col-sm-9">
                                 <input onChange={this.handleChanged} value={this.state.city || ''}
                                        type="text" name="city" className="form-control" id="city"
                                        placeholder="City"/>
                             </div>
                         </div>
                         <div className="form-group row col-md-6">
-                            <label htmlFor="state" className="col-sm-2 col-form-label">State</label>
-                            <div className="col-sm-10">
+                            <label htmlFor="state" className="col-sm-3 col-form-label">State</label>
+                            <div className="col-sm-9">
                                 <input onChange={this.handleChanged} value={this.state.state || ''}
                                        type="text" name="state" className="form-control" id="state"
                                        placeholder="State"/>
@@ -175,16 +175,16 @@ export default class Profile extends Component {
                     </div>
                     <div className="row">
                         <div className="form-group row col-6">
-                            <label htmlFor="zip" className="col-sm-2 col-form-label">Zip</label>
-                            <div className="col-sm-10">
+                            <label htmlFor="zip" className="col-sm-3 col-form-label">Zip</label>
+                            <div className="col-sm-9">
                                 <input onChange={this.handleChanged} value={this.state.zip || ''}
                                        type="text" name="zip" className="form-control" id="zip"
                                        placeholder="Zip"/>
                             </div>
                         </div>
                         <div className="form-group row col-6">
-                            <label htmlFor="phone" className="col-sm-2 col-form-label">Phone</label>
-                            <div className="col-sm-10">
+                            <label htmlFor="phone" className="col-sm-3 col-form-label">Phone</label>
+                            <div className="col-sm-9">
                                 <input onChange={this.handleChanged} value={this.state.phone || ''}
                                        type="text" name="phone" className="form-control" id="phone"
                                        placeholder="Phone"/>

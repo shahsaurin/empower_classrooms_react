@@ -29,17 +29,17 @@ export default class ProjectListItem extends Component {
             <li className="list-group-item">
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-9">
+                        <div className="col-md-9">
                             <ul>
                                 <h3>{this.props.project.title}</h3>
                                 <p>{this.props.project.shortDescription}</p>
-                                <li>Total Price: {this.props.project.totalPrice}</li>
-                                <li>Cost to Complete: {this.props.project.costToComplete}</li>
+                                <li>Total Price: ${this.props.project.totalPrice}</li>
+                                <li>Cost to Complete: ${this.props.project.costToComplete}</li>
                                 <li>Approval Status: {this.state.approved}</li>
                             </ul>
                         </div>
 
-                        <div className="col-3">
+                        <div className="col-md-3">
                             <div className={this.props.deleteButton ? '' : 'hidden'}>
                                 <span className="float-right">
                                     <i className="fa fa-trash" onClick={() => {this.props.delete(this.props.project.id)}}></i>
@@ -57,8 +57,8 @@ export default class ProjectListItem extends Component {
                             <div className={this.props.displayDonateButton ? '' : 'hidden'}>
                                 <input type="text" className="form-control m-1"
                                        onChange={this.amountChanged}
-                                       placeholder="Enter $$"/>
-                                <button className="btn btn-warning form-control m-1"
+                                       placeholder="$$"/>
+                                <button className="btn btn-warning form-control m-1 p-1"
                                         onClick={() => {
                                             this.props.donateToProject(this.props.donorId, this.props.project.id, this.state.donationAmount)}
                                         }>
