@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import UserService from "../services/UserService";
 import SchoolService from "../services/SchoolService";
 
@@ -13,6 +14,7 @@ export default class Register extends Component {
             // Additional attributes:
             userType: 'teacher',
             schoolName: '',
+            showSpinner: false,
             // User attributes below:
             firstName: '',
             lastName: '',
@@ -43,6 +45,7 @@ export default class Register extends Component {
     }
 
     registerUser() {
+        this.setState({showSpinner: true});
         let user = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -67,16 +70,18 @@ export default class Register extends Component {
                 .then((schoolId) => {
                     this.userService
                         .createUser(user, this.state.userType, schoolId)
-                        .then((user) =>
-                            alert("Account created successfully!!")
-                        );
+                        .then((user) => {
+                            this.setState({showSpinner: false});
+                            alert("Account created successfully!!");
+                        });
                 })
         } else {
             this.userService
                 .createUser(user, this.state.userType, null)
-                .then((user) =>
-                    alert("Account created successfully!!")
-                );
+                .then((user) => {
+                    this.setState({showSpinner: false});
+                    alert("Account created successfully!!");
+                });
         }
     }
 
@@ -84,6 +89,23 @@ export default class Register extends Component {
     render() {
         return (
             <div className="container">
+
+                <div className="row">
+                    <div className="col-8 p-3">
+                        <h3>Empower Classrooms</h3>
+                    </div>
+                    <div className={this.state.isLoggedIn ? "hidden" : "col-4 pull-right p-2"}>
+                        <Link to={`/search`}>
+                            <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
+                        </Link>
+                    </div>
+                    <div className={this.state.isLoggedIn ? "col-4 pull-right p-2" : "hidden"}>
+                        <Link to={`/search`} className="pull-right">
+                            Logout
+                        </Link>
+                    </div>
+                </div>
+
                 <div className="row">
                     <div className="col-2">
                     </div>
@@ -209,6 +231,12 @@ export default class Register extends Component {
                         <div className="form-group row m-1 mb-4">
                                 <button onClick={this.registerUser}
                                         className="btn btn-block btn-primary">Register</button>
+                        </div>
+
+                        <div id="spinner" className={this.state.showSpinner ? "spinner" : "hidden"}>
+                            <div className="bounce1"></div>
+                            <div className="bounce2"></div>
+                            <div className="bounce3"></div>
                         </div>
                     </div>
 

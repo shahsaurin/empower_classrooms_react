@@ -15,6 +15,7 @@ export default class ProjectsList_API extends Component {
 
         this.searchQueryChanged = this.searchQueryChanged.bind(this);
         this.getDonorschooseProjects = this.getDonorschooseProjects.bind(this);
+        sessionStorage.setItem('isLoggedIn', 'false');
     }
 
     searchQueryChanged(event) {
@@ -49,6 +50,22 @@ export default class ProjectsList_API extends Component {
         return(
 
                 <div className="container">
+
+                    <div className="row">
+                        <div className="col-8 p-3">
+                            <h3>Empower Classrooms</h3>
+                        </div>
+                        <div className={this.state.isLoggedIn ? "hidden" : "col-4 pull-right p-2"}>
+                            <Link to={`/search`}>
+                                <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
+                            </Link>
+                        </div>
+                        <div className={this.state.isLoggedIn ? "col-4 pull-right p-2" : "hidden"}>
+                            <Link to={`/search`} className="pull-right">
+                                Logout
+                            </Link>
+                        </div>
+                    </div>
 
                     <div className="row">
                         {/*<div className="col-6">*/}

@@ -8,23 +8,46 @@ import TeacherDashboard from "../teacher/TeacherDashboard";
 import VolunteerDashboard from "../volunteer/VolunteerDashboard";
 import DonorDashboard from "../donor/DonorDashboard";
 import AdminDashboard from "../admin/AdminDashboard";
+import {mySessionStorage} from "../storage/storage";
 
 export default class Homepage extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoggedIn: ''
+        };
+    }
+
+    componentDidMount() {
+        if(mySessionStorage.getItem('isLoggedIn') === 'true') {
+            this.setState({isLoggedIn: true});
+        } else {
+            this.setState({isLoggedIn: false});
+        }
+    }
+
 
     render() {
         return(
             <Router>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-8 p-3">
-                            <h3>Empower Classrooms</h3>
-                        </div>
-                        <div className="col-4 pull-right p-2">
-                            <Link to={`/search`}>
-                                <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
-                            </Link>
-                        </div>
-                    </div>
+                    {/*<div className="row">*/}
+                        {/*<div className="col-8 p-3">*/}
+                            {/*<h3>Empower Classrooms</h3>*/}
+                        {/*</div>*/}
+                        {/*<div className={this.state.isLoggedIn ? "hidden" : "col-4 pull-right p-2"}>*/}
+                            {/*<Link to={`/search`}>*/}
+                                {/*<i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>*/}
+                            {/*</Link>*/}
+                        {/*</div>*/}
+                        {/*<div className={this.state.isLoggedIn ? "col-4 pull-right p-2" : "hidden"}>*/}
+                            {/*<Link to={`/search`} className="pull-right">*/}
+                                {/*Logout*/}
+                            {/*</Link>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
 
                     <div className="row">
 

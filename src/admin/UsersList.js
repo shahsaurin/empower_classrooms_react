@@ -102,10 +102,9 @@ export default class UsersList extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container m-1">
                 <div>
                     <h3>Users List</h3>
-                    <h3>Total users = {this.state.users.length}</h3>
 
                     <ul className="list-group">
                         {this.renderListOfUsers()}

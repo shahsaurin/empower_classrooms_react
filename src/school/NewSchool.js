@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import SchoolService from "../services/SchoolService";
 
 export default class NewSchool extends Component {
@@ -60,8 +61,24 @@ export default class NewSchool extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row">
 
+                <div className="row">
+                    <div className="col-8 p-3">
+                        <h3>Empower Classrooms</h3>
+                    </div>
+                    <div className={this.state.isLoggedIn ? "hidden" : "col-4 pull-right p-2"}>
+                        <Link to={`/search`}>
+                            <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
+                        </Link>
+                    </div>
+                    <div className={this.state.isLoggedIn ? "col-4 pull-right p-2" : "hidden"}>
+                        <Link to={`/search`} className="pull-right">
+                            Logout
+                        </Link>
+                    </div>
+                </div>
+
+                <div className="row">
                     <div className="col-1">
                     </div>
 

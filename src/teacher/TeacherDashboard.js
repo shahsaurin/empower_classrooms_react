@@ -5,16 +5,23 @@ import ProjectList_teacher from "../project/ProjectList_teacher";
 import MessageList from "../message/MessageList";
 import MessageCreator from "../message/MessageCreator";
 import Profile from "../container/Profile";
+import {mySessionStorage} from "../storage/storage";
 
 export default class TeacherDashboard extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            teacherId: ''
+            teacherId: '',
+            isLoggedIn: ''
         };
 
         this.selectTeacher = this.selectTeacher.bind(this);
+        this.logout = this.logout.bind(this);
+    }
+
+    logout() {
+        window.location.pathname = '/';
     }
 
     selectTeacher(teacherId) {
@@ -23,6 +30,11 @@ export default class TeacherDashboard extends Component {
 
     componentDidMount() {
         this.selectTeacher(this.props.match.params.teacherId);
+        if(mySessionStorage.getItem('isLoggedIn') === 'true') {
+            this.setState({isLoggedIn: true});
+        } else {
+            this.setState({isLoggedIn: false});
+        }
     }
 
 
@@ -31,6 +43,23 @@ export default class TeacherDashboard extends Component {
         return (
             <Router>
                 <div className="container">
+
+                    <div className="row">
+                        <div className="col-8 p-3">
+                            <h3>Empower Classrooms</h3>
+                        </div>
+                        <div className={this.state.isLoggedIn ? "hidden" : "col-4 pull-right p-2"}>
+                            <Link to={`/search`}>
+                                <i className="fa fa-home fa-2x pull-right m-2" aria-hidden="true"></i>
+                            </Link>
+                        </div>
+                        <div className={this.state.isLoggedIn ? "col-4 pull-right p-2" : "hidden"}>
+                            {/*<Link to={`/search`} className="pull-right">*/}
+                            <button className="btn btn-outline-danger pull-right" onClick={this.logout}>Logout</button>
+                            {/*</Link>*/}
+                        </div>
+                    </div>
+
                     <h2>Teacher Home: {this.state.teacherId}</h2>
                     {/*<h3>Total Projects initiated: {}*/}
 
