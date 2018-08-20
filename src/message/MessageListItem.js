@@ -11,8 +11,8 @@ export default class MessageListItem extends Component {
                             <ul>
                                 <p className={this.props.isInbox ? '' : 'hidden'}>From: {this.props.message.sender.firstName + " " + this.props.message.sender.lastName}</p>
                                 <p className={this.props.isInbox ? 'hidden' : ''}>To: {this.props.message.recipient.firstName + " " + this.props.message.recipient.lastName}</p>
-                                <p>Message: {this.props.message.description}</p>
                                 <p>Date: {this.props.message.lastUpdated}</p>
+                                <p>{this.props.message.description}</p>
                             </ul>
                         </div>
 
