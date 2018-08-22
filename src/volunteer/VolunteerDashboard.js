@@ -62,55 +62,55 @@ export default class VolunteerDashboard extends Component {
                     <h2>Volunteer Home - Id: {this.state.volunteerId}</h2>
 
                     <div className="row">
-                        <div className="col-sm-4">
+                        <div className="col-md-3 col-sm-4">
                             <ul>
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/profile`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/profile`}>
+                                    <li className="list-group-item text-center">
                                         My Profile
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/projects/pending`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/projects/pending`}>
+                                    <li className="list-group-item text-center">
                                         Pending Projects
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/projects/approved`}>
+                                    <li className="list-group-item text-center">
                                         Approved Projects
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/inbox`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/inbox`}>
+                                    <li className="list-group-item text-center">
                                         Received Messages
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/sentbox`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/sentbox`}>
+                                    <li className="list-group-item text-center">
                                         Sent Messages
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/messageTeacher`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/messageTeacher`}>
+                                    <li className="list-group-item text-center">
                                         Contact a Teacher
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/volunteer/${this.state.volunteerId}/messageDonor`}>
+                                <Link to={`/volunteer/${this.state.volunteerId}/messageDonor`}>
+                                    <li className="list-group-item text-center">
                                         Contact a Donor
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
                             </ul>
 
                         </div>
 
-                        <div className="col-sm-8">
+                        <div className="col-md-9 col-sm-8">
 
                             <Route path="/volunteer/:volunteerId/profile"
                                    component={Profile}/>

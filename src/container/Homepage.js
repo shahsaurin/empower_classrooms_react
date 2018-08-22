@@ -32,7 +32,7 @@ export default class Homepage extends Component {
     render() {
         return(
             <Router>
-                <div className="container">
+                <div className="container ss-no-margin">
                     {/*<div className="row">*/}
                         {/*<div className="col-8 p-3">*/}
                             {/*<h3>Empower Classrooms</h3>*/}
@@ -49,7 +49,7 @@ export default class Homepage extends Component {
                         {/*</div>*/}
                     {/*</div>*/}
 
-                    <div className="row">
+                    {/*<div className="row">*/}
 
                         {/*Default Route for Homepage*/}
                         <Route exact path="/"
@@ -78,7 +78,7 @@ export default class Homepage extends Component {
 
                         <Route path="/admin/:adminId/dashboard"
                                component={AdminDashboard}/>
-                    </div>
+                    {/*</div>*/}
 
 
                 </div>

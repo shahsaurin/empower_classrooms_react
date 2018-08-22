@@ -10,6 +10,27 @@
     background-color: lightgrey;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.ss-selected {
+    color: white;
+    background-color: cornflowerblue;
+}
+
+.ss-no-margin {
+    margin: 0px;
+}
+
+a:hover
+{
+    color: #00A0C6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .spinner {
     margin: 100px auto 0;
     width: 70px;

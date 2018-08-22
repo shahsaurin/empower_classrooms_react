@@ -62,51 +62,49 @@ export default class TeacherDashboard extends Component {
 
                     <h2>Teacher Home: {this.state.teacherId}</h2>
                     {/*<h3>Total Projects initiated: {}*/}
-
                     <div className="row">
-                        <div className="col-sm-4">
+                        <div className="col-md-3 col-sm-4">
                             <ul className="list-group">
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/profile`}>
+                                <Link to={`/teacher/${this.state.teacherId}/profile`}>
+                                    <li className="list-group-item text-center">
                                         My Profile
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/projects`}>
+                                <Link to={`/teacher/${this.state.teacherId}/projects`}>
+                                    <li className="list-group-item text-center">
                                         View created projects
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/project/new`}>
+                                <Link to={`/teacher/${this.state.teacherId}/project/new`}>
+                                    <li className="list-group-item text-center">
                                         Start New Project
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/inbox`}>
+                                <Link to={`/teacher/${this.state.teacherId}/inbox`}>
+                                    <li className="list-group-item text-center">
                                         Received Messages
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/sentbox`}>
+                                <Link to={`/teacher/${this.state.teacherId}/sentbox`}>
+                                    <li className="list-group-item text-center">
                                         Sent Messages
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/teacher/${this.state.teacherId}/messageVolunteer`}>
+                                <Link to={`/teacher/${this.state.teacherId}/messageVolunteer`}>
+                                    <li className="list-group-item text-center">
                                         Contact a Volunteer
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
                             </ul>
-
                         </div>
 
-                        <div className="col-sm-8">
 
+                        <div className="col-md-9 col-sm-8">
                             <Route path="/teacher/:teacherId/profile"
                                    component={Profile}/>
 
@@ -129,6 +127,7 @@ export default class TeacherDashboard extends Component {
 
                     </div>
                 </div>
+
             </Router>
         );
     }

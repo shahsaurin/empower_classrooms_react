@@ -18,7 +18,7 @@ export default class SchoolListItem extends Component {
                     <div className="row">
                         <div className="col-9">
                             <ul>
-                                <li>Id: {this.props.school.id}</li>
+                                {/*<li>Id: {this.props.school.id}</li>*/}
                                 <li>Name: {this.props.school.name}</li>
                                 <li>City: {this.props.school.city}</li>
                                 <li>Zip: {this.props.school.zip}</li>

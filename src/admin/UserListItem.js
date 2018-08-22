@@ -26,16 +26,23 @@ export default class UserListItem extends Component {
                     <div className="row">
                         <div className="col-9">
                             <ul>
-                                <li>First Name: {this.props.user.firstName}</li>
-                                <li>Last Name: {this.props.user.lastName}</li>
-                                <li>Username: {this.props.user.username}</li>
-                                <li>Password: {this.props.user.password}</li>
-                                <li>Email: {this.props.user.email}</li>
-                                <li>City: {this.props.user.city}</li>
-                                {/*<li>Date of Birth: {this.props.user.dob}</li>*/}
-                                <li>State: {this.props.user.state}</li>
-                                <li>Zip: {this.props.user.zip}</li>
-                                <li>Phone: {this.props.user.phone}</li>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <li>First Name: {this.props.user.firstName}</li>
+                                        <li>Last Name: {this.props.user.lastName}</li>
+                                        <li>Username: {this.props.user.username}</li>
+                                        <li>Password: {this.props.user.password}</li>
+                                        <li>Email: {this.props.user.email}</li>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <li>City: {this.props.user.city}</li>
+                                        {/*<li>Date of Birth: {this.props.user.dob}</li>*/}
+                                        <li>State: {this.props.user.state}</li>
+                                        <li>Zip: {this.props.user.zip}</li>
+                                        <li>Phone: {this.props.user.phone}</li>
+                                    </div>
+                                </div>
                             </ul>
                         </div>
 

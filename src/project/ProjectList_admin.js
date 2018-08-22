@@ -76,7 +76,7 @@ export default class ProjectList_admin extends Component {
         return (
             <div className="container">
                 <div>
-                    <h3>All Projects</h3>
+                    {/*<h3>All Projects</h3>*/}
                     {/*<h3>Total projects = {this.state.projects.length}</h3>*/}
 
                     <ul className="list-group">

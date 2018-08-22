@@ -12,12 +12,14 @@ export default class AdminDashboard extends Component {
         super(props);
         this.state = {
             adminId: '',
-            isLoggedIn: ''
+            isLoggedIn: '',
+            selected: ''
         };
 
         this.selectAdmin = this.selectAdmin.bind(this);
         this.logout = this.logout.bind(this);
     }
+
 
     logout() {
         window.location.pathname = '/';
@@ -64,48 +66,48 @@ export default class AdminDashboard extends Component {
                     <h5>The force is with you!!</h5>
 
                     <div className="row mt-4">
-                        <div className="col-sm-4">
+                        <div className="col-md-3 col-sm-4">
                             <ul>
-                                <p>Domain Objects</p>
-                                <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/school-manager`}>
-                                        Schools
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/project-manager`}>
-                                        Projects
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/message-manager`}>
-                                        Messages
-                                    </Link>
-                                </li>
+                                <h5 className="text-center">Domain Objects</h5>
+                                <Link to={`/admin/${this.state.adminId}/school-manager`}>
+                                    <li className={"list-group-item text-center"}>
+                                            Schools
+                                    </li>
+                                </Link>
+                                <Link to={`/admin/${this.state.adminId}/project-manager`}>
+                                    <li className="list-group-item text-center">
+                                            Project
+                                    </li>
+                                </Link>
+                                <Link to={`/admin/${this.state.adminId}/message-manager`}>
+                                    <li className="list-group-item text-center">
+                                            Messages
+                                    </li>
+                                </Link>
                             </ul>
 
                             <ul>
-                                <p>Users</p>
-                                <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/teacher-manager`}>
-                                        Teachers
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/volunteer-manager`}>
+                                <h5 className="text-center">Users</h5>
+                                <Link to={`/admin/${this.state.adminId}/teacher-manager`}>
+                                    <li className="list-group-item text-center">
+                                            Teachers
+                                    </li>
+                                </Link>
+                                <Link to={`/admin/${this.state.adminId}/volunteer-manager`}>
+                                    <li className="list-group-item text-center">
                                         Volunteers
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to={`/admin/${this.state.adminId}/donor-manager`}>
+                                    </li>
+                                </Link>
+                                <Link to={`/admin/${this.state.adminId}/donor-manager`}>
+                                    <li className="list-group-item text-center">
                                         Donors
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
                             </ul>
 
                         </div>
 
-                        <div className="col-sm-8">
+                        <div className="col-md-9 col-sm-8">
 
                             <Route path="/admin/:adminId/school-manager"
                                    component={SchoolManager}/>

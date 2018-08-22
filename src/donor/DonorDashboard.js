@@ -62,41 +62,41 @@ export default class DonorDashboard extends Component {
                     <h2>Donor Home - Id: {this.state.donorId}</h2>
 
                     <div className="row">
-                        <div className="col-sm-4">
+                        <div className="col-md-3 col-sm-4">
                             <ul>
-                                <li className="list-group-item">
-                                    <Link to={`/donor/${this.state.donorId}/profile`}>
+                                <Link to={`/donor/${this.state.donorId}/profile`}>
+                                    <li className="list-group-item text-center">
                                         My Profile
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to={`/donor/${this.state.donorId}/projects`}>
+                                    </li>
+                                </Link>
+                                <Link to={`/donor/${this.state.donorId}/projects`}>
+                                    <li className="list-group-item text-center">
                                         Available Projects
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/donor/${this.state.donorId}/inbox`}>
+                                <Link to={`/donor/${this.state.donorId}/inbox`}>
+                                    <li className="list-group-item text-center">
                                         Received Messages
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/donor/${this.state.donorId}/sentbox`}>
+                                <Link to={`/donor/${this.state.donorId}/sentbox`}>
+                                    <li className="list-group-item text-center">
                                         Sent Messages
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
 
-                                <li className="list-group-item">
-                                    <Link to={`/donor/${this.state.donorId}/messageVolunteer`}>
+                                <Link to={`/donor/${this.state.donorId}/messageVolunteer`}>
+                                    <li className="list-group-item text-center">
                                         Contact a Volunteer
-                                    </Link>
-                                </li>
+                                    </li>
+                                </Link>
                             </ul>
 
                         </div>
 
-                        <div className="col-sm-8">
+                        <div className="col-md-9 col-sm-8">
 
                             <Route path="/donor/:donorId/profile"
                                    component={Profile}/>
